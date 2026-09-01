@@ -1,13 +1,9 @@
 # English-study
 
-一个用于英语学习的网页工具。
+英语学习网页应用。
 
-## 在线体验
+## 项目导航
 
-👉 [点击打开 English-study](https://bluelinda.github.io/English-study/)
-
-## 项目说明
-
-- 英语学习工具
-- 支持手机和电脑浏览器访问
-- 使用 GitHub Pages 部署
+| 项目 | 在线体验 | 源码 |
+|---|---|---|
+| English Study | [打开在线网站](https://bluelinda.github.io/English-study/) | [查看源码](./index.html) |
