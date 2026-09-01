@@ -1,0 +1,1251 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"/>
+<title>雅思伴学｜湖水蓝水彩版</title>
+<style>
+:root{
+  --ink:#24456f;
+  --ink-2:#31577f;
+  --blue:#6ea0cf;
+  --blue-2:#8db8d8;
+  --blue-3:#c8ddec;
+  --blue-4:#e7f0f6;
+  --paper:#fbfaf5;
+  --paper-2:#f6f4ed;
+  --mist:#eff4f6;
+  --line:#d4e0e7;
+  --warm:#e7d9c6;
+  --shadow:0 18px 48px rgba(54,83,110,.10);
+  --r:26px;
+}
+*{box-sizing:border-box}
+html,body{margin:0;min-height:100%;background:#f5f3ec;color:var(--ink);font-family:Georgia,"Times New Roman","Songti SC","Noto Serif SC",serif}
+body{
+  background:
+    radial-gradient(circle at 12% 0%, rgba(255,255,255,.96) 0 11%, transparent 25%),
+    radial-gradient(circle at 88% 8%, rgba(208,225,236,.46) 0 12%, transparent 30%),
+    linear-gradient(180deg,#f9f8f3 0%,#f1efe7 100%);
+}
+button,input,textarea{font:inherit}
+button{cursor:pointer}
+button:focus-visible,input:focus-visible,textarea:focus-visible{outline:3px solid rgba(110,160,207,.2);outline-offset:2px}
+
+.shell{
+  width:min(1180px,calc(100% - 28px));
+  min-height:calc(100vh - 28px);
+  margin:14px auto;
+  background:
+    linear-gradient(rgba(255,255,255,.16),rgba(255,255,255,.16)),
+    repeating-linear-gradient(0deg,rgba(89,98,101,.018) 0 1px,transparent 1px 4px),
+    var(--paper);
+  border:1px solid #e6e0d5;
+  border-radius:32px;
+  box-shadow:0 22px 70px rgba(62,67,70,.12);
+  display:grid;
+  grid-template-columns:86px minmax(0,1fr);
+  overflow:hidden;
+  position:relative;
+}
+.shell:before{
+  content:"";
+  position:absolute;inset:0;pointer-events:none;opacity:.32;
+  background:
+    radial-gradient(ellipse at 6% 20%,rgba(120,160,190,.11),transparent 28%),
+    radial-gradient(ellipse at 95% 78%,rgba(90,140,175,.09),transparent 30%);
+}
+.side{
+  position:relative;z-index:4;
+  border-right:1px solid #e0e5e8;
+  background:linear-gradient(180deg,rgba(235,241,244,.82),rgba(248,247,241,.78));
+  padding:24px 14px;
+  display:flex;flex-direction:column;align-items:center;
+}
+.brandmark{
+  width:48px;height:48px;border-radius:16px;
+  border:1px solid #c8d8e2;
+  background:rgba(255,255,255,.65);
+  display:grid;place-items:center;color:var(--ink);font-weight:800;font-size:20px;
+  box-shadow:0 8px 18px rgba(57,87,116,.08)
+}
+.side nav{display:grid;gap:13px;margin-top:34px;width:100%}
+.navbtn{
+  border:0;background:transparent;width:58px;height:58px;margin:auto;border-radius:17px;
+  color:#47698e;font-size:23px;display:grid;place-items:center;transition:.18s ease
+}
+.navbtn:hover{transform:translateY(-1px);background:rgba(255,255,255,.55)}
+.navbtn.active{background:linear-gradient(145deg,#bdd6e7,#dbe9f1);box-shadow:inset 0 0 0 1px rgba(112,153,185,.2),0 8px 16px rgba(74,116,150,.1)}
+.side-bottom{margin-top:auto;display:grid;gap:12px}
+.small-icon{font-size:20px;color:#5d7ca0}
+
+.main{position:relative;z-index:2;min-width:0}
+.page{display:none;padding:28px 34px 46px}
+.page.active{display:block}
+
+.hero{
+  min-height:430px;
+  border-bottom:1px solid #e4e5df;
+  position:relative;
+  overflow:hidden;
+  padding:32px 36px;
+  background:
+    linear-gradient(180deg,rgba(252,251,246,.82) 0 46%,rgba(243,247,248,.26) 47% 100%);
+}
+.hero h1{font-size:38px;font-weight:500;margin:0;color:#233f67;letter-spacing:.01em}
+.hero .sub{margin-top:7px;font:15px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#6281a4}
+.sun{
+  position:absolute;right:29%;top:217px;width:64px;height:34px;
+  border-radius:70px 70px 0 0;background:radial-gradient(circle at 50% 70%,rgba(236,207,160,.55),rgba(236,207,160,.08) 70%,transparent 72%);
+}
+.mountain{
+  position:absolute;left:0;right:0;top:92px;height:155px;opacity:.92;
+}
+.mountain svg{width:100%;height:100%}
+.lake{
+  position:absolute;left:0;right:0;top:245px;height:185px;
+  background:
+    linear-gradient(180deg,rgba(231,241,246,.95),rgba(245,247,245,.4)),
+    repeating-linear-gradient(0deg,rgba(77,130,169,.08) 0 1px,transparent 1px 9px);
+  filter:saturate(.9);
+}
+.lake:after{
+  content:"";position:absolute;left:7%;right:4%;bottom:34px;height:2px;background:linear-gradient(90deg,transparent,#7aa6c5 15%,transparent 46%,#9abdd4 75%,transparent)
+}
+.birds{position:absolute;right:27%;top:42px;color:#466d96;font-size:18px;letter-spacing:8px;transform:rotate(-4deg)}
+.branch{
+  position:absolute;right:4%;bottom:12px;width:118px;height:145px;opacity:.72;
+}
+.branch svg{width:100%;height:100%}
+.prompt-card{
+  position:absolute;left:34px;top:158px;width:min(560px,68%);
+  background:rgba(252,250,245,.90);backdrop-filter:blur(5px);
+  border:1px solid rgba(159,180,195,.52);border-radius:23px;padding:16px 18px;
+  box-shadow:0 10px 26px rgba(59,91,117,.05)
+}
+.prompt-card .label{font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#5b7897;margin-bottom:8px}
+.today-tasks{display:grid;gap:8px}
+.today-task{
+  display:grid;grid-template-columns:52px 1fr auto;gap:10px;align-items:center;
+  border:1px solid rgba(201,216,225,.82);background:rgba(255,254,250,.76);
+  border-radius:15px;padding:9px 10px;transition:.16s ease
+}
+.today-task:hover{transform:translateX(2px);background:#fffefb;border-color:#b9cfde}
+.today-part{
+  width:45px;height:34px;border-radius:11px;background:#e8f1f6;display:grid;place-items:center;
+  font:800 12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#3d678d
+}
+.today-copy b{
+  display:block;font:700 13px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#315878
+}
+.today-copy small{
+  display:block;margin-top:2px;font:11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#7890a3
+}
+.today-go{
+  border:0;background:transparent;color:#6189aa;font-size:18px;padding:5px 8px;border-radius:10px
+}
+.today-go:hover{background:#edf4f8}
+.mic-wrap{
+  position:absolute;left:50%;bottom:-45px;transform:translateX(-50%);
+  width:118px;height:118px;border-radius:50%;
+  background:rgba(255,255,255,.58);border:1px solid rgba(155,185,205,.55);
+  display:grid;place-items:center;box-shadow:0 12px 30px rgba(56,90,119,.13);
+}
+.mic{
+  width:82px;height:82px;border-radius:50%;
+  background:radial-gradient(circle at 35% 28%,#a7c8df,#6b9fca 62%,#568bb7 100%);
+  border:1px solid #739fc2;color:#fff;font-size:36px;display:grid;place-items:center;
+  box-shadow:inset 0 0 0 7px rgba(255,255,255,.2)
+}
+.wave{position:absolute;left:15%;right:15%;bottom:8px;height:38px;display:flex;justify-content:space-between;align-items:center;opacity:.8}
+.wave span{width:3px;border-radius:4px;background:#6ea0cf}
+.wave.left{right:56%}.wave.right{left:56%}
+.tap{position:absolute;bottom:-75px;left:50%;transform:translateX(-50%);font:12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#607e9b}
+
+.home-content{padding:82px 36px 38px}
+.grid3{display:grid;grid-template-columns:repeat(4,1fr);gap:15px}
+.soft-card{
+  background:rgba(252,251,247,.92);border:1px solid #dbe3e7;border-radius:20px;padding:18px;
+  box-shadow:0 8px 22px rgba(58,84,105,.05);position:relative;overflow:hidden
+}
+.soft-card:after{content:"";position:absolute;width:90px;height:70px;right:-28px;bottom:-25px;background:radial-gradient(circle,rgba(159,193,215,.22),transparent 70%)}
+.soft-card h3{margin:0;font-size:15px;font-weight:600}.soft-card p{font:13px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#66809b}
+.big{font-size:34px;margin-top:6px;color:#274f7a}
+.progress-ring{
+  width:76px;height:76px;border-radius:50%;display:grid;place-items:center;
+  background:conic-gradient(#6b9fca 68%,#e7edf0 0);position:relative
+}
+.progress-ring:after{content:"";position:absolute;inset:9px;background:#fbfaf5;border-radius:50%}
+.progress-ring b{position:relative;z-index:1}
+.streak{display:flex;gap:5px;margin-top:12px}.streak i{width:11px;height:11px;border-radius:50%;background:#6f9fca;display:block}.streak i.off{background:#dce5ea}
+
+.section-title{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}
+.section-title h2{font-size:29px;margin:0;font-weight:500}.section-title p{font:13px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#7890a4;margin:0}
+.part-switch{display:flex;gap:8px;flex-wrap:wrap}
+.part-switch button{
+  border:1px solid #d3e0e8;background:#fbfaf6;color:#5c7795;border-radius:999px;padding:9px 14px;font-weight:700
+}
+.part-switch button.active{background:#dceaf2;border-color:#c0d8e6;color:#315b82}
+.practice-grid{display:grid;grid-template-columns:.86fr 1.14fr;gap:18px}
+.panel{
+  background:rgba(252,251,247,.94);border:1px solid #dce4e8;border-radius:22px;padding:20px;box-shadow:var(--shadow)
+}
+.panel h3{margin:0 0 8px;font-size:19px;font-weight:500}
+.helper{font:13px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#69839a}
+textarea,input{
+  width:100%;border:1px solid #d2dfe6;background:#fffefb;border-radius:16px;padding:13px 14px;color:#294b70;
+  font:14px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif
+}
+textarea{min-height:118px;resize:vertical}
+.modebar{display:flex;background:#eef3f5;border-radius:13px;padding:4px;margin:14px 0 10px}
+.modebar button{flex:1;border:0;background:transparent;border-radius:10px;padding:8px;color:#6f879b;font-weight:700}
+.modebar button.active{background:#fbfaf5;color:#31597d;box-shadow:0 4px 10px rgba(65,91,109,.06)}
+.primary{
+  border:0;background:#6e9fca;color:#fff;border-radius:14px;padding:11px 16px;font-weight:800;box-shadow:0 7px 16px rgba(73,119,157,.14)
+}
+.secondary{border:1px solid #d1dee6;background:#fbfaf6;color:#557494;border-radius:14px;padding:10px 14px;font-weight:700}
+.row{display:flex;gap:10px;flex-wrap:wrap}
+.output{display:grid;gap:12px}
+.note{
+  border:1px solid #dbe4e9;border-radius:18px;padding:15px;background:#fbfaf6
+}
+.note h4{margin:0 0 7px;font-size:14px;font-weight:600}
+.note p,.note li{font:13px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#526f89}
+.chips{display:flex;gap:7px;flex-wrap:wrap}.chip{font:12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;border:1px solid #d6e2e8;background:#eff5f8;color:#4f7090;border-radius:999px;padding:6px 9px}
+.sentence{padding:10px 12px;border-left:3px solid #8db8d8;background:#f3f7f9;border-radius:0 12px 12px 0;font:13px/1.7 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#385b7b}
+.trans{border-bottom:1px dotted #6892b8;cursor:pointer}
+.trans:hover{background:#e7f0f6}
+.story-card,.idea-card,.phrase-card{
+  border:1px solid #dce5e9;border-radius:18px;padding:15px;background:#fbfaf6
+}
+.story-head{display:flex;justify-content:space-between;gap:10px}.story-head h4{margin:0;font-size:16px}
+.type{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;padding:5px 8px;background:#edf4f8;border-radius:999px;color:#567795}
+.cards{display:grid;grid-template-columns:repeat(2,1fr);gap:13px}
+.library-tabs{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.library-tabs button{border:1px solid #d7e2e8;background:#fbfaf6;color:#5e7893;border-radius:999px;padding:9px 13px;font-weight:700}
+.library-tabs button.active{background:#dfeef4;color:#345d83}
+.tags{display:flex;gap:6px;flex-wrap:wrap;margin-top:9px}.tag{font:11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;background:#f0f4f5;border-radius:999px;padding:5px 7px;color:#668098}
+.details{margin-top:10px;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#6d8191}
+.idea-card{cursor:pointer;transition:.15s}.idea-card:hover,.idea-card.selected{transform:translateY(-1px);background:#f2f7fa;border-color:#aac7db}
+.idea-card h4{margin:0 0 7px}
+.p3grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.pre{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.pre .note{min-height:150px}
+.record{display:flex;justify-content:space-between;gap:14px;border-bottom:1px solid #e6e7e1;padding:12px 0}.record:last-child{border-bottom:0}
+.favbtn{border:0;background:transparent;color:#7393ae;font-size:20px}.favbtn.on{color:#be8d75}
+.pop{position:fixed;z-index:50;background:#294b70;color:#fff;padding:8px 10px;border-radius:10px;font:12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;box-shadow:var(--shadow)}
+.hidden{display:none!important}
+.mobile-nav{display:none}
+.footer{padding:18px 0 0;text-align:center;color:#70879a;font-size:13px;font-style:italic}
+@media(max-width:900px){
+  .shell{grid-template-columns:1fr;width:100%;margin:0;border-radius:0;min-height:100vh}
+  .side{display:none}.page{padding:20px 16px 94px}.hero{min-height:420px;padding:27px 20px}.hero h1{font-size:32px}
+  .prompt-card{left:20px;width:calc(100% - 40px);top:165px;padding:13px}.today-task{grid-template-columns:44px 1fr auto;padding:8px}.today-part{width:39px}.home-content{padding:84px 18px 24px}
+  .grid3,.practice-grid,.cards,.pre{grid-template-columns:1fr}.p3grid{grid-template-columns:1fr}
+  .mobile-nav{display:grid;grid-template-columns:repeat(5,1fr);position:fixed;z-index:20;left:10px;right:10px;bottom:10px;background:rgba(251,250,245,.94);backdrop-filter:blur(10px);border:1px solid #d9e1e5;border-radius:18px;padding:7px;box-shadow:var(--shadow)}
+  .mobile-nav button{border:0;background:transparent;border-radius:12px;padding:8px 4px;color:#68829a;font-size:11px;display:grid;gap:3px;place-items:center}
+  .mobile-nav button.active{background:#e9f1f5;color:#315c83}.mobile-nav b{font-size:18px}
+}
+
+/* ===== Module 1 · 本地模拟口试（无模型 API） ===== */
+.exam-layout{display:grid;grid-template-columns:1.12fr .88fr;gap:18px}
+.exam-stagebar{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:14px}
+.exam-stage{border:1px solid #d5e2e9;background:#fbfaf6;color:#668098;border-radius:999px;padding:8px 12px;font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.exam-stage.active{background:#dcebf3;color:#315d83;border-color:#bfd7e5}
+.exam-stage.done{background:#eef4ef;color:#66806f}
+.local-badge{display:inline-flex;align-items:center;gap:7px;border:1px solid #cbdde8;background:#edf5f8;border-radius:999px;padding:6px 9px;font:700 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#527591}
+.local-dot{width:7px;height:7px;border-radius:50%;background:#7aa4c4}
+.chatbox{display:grid;gap:12px;max-height:430px;overflow:auto;padding-right:4px}
+.msg{display:flex;gap:9px;align-items:flex-start}
+.avatar{width:34px;height:34px;border-radius:12px;display:grid;place-items:center;flex:0 0 34px;font:800 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.msg.examiner .avatar{background:#dcebf3;color:#315d83}
+.msg.user .avatar{background:#eee8dd;color:#786957}
+.bubble{max-width:86%;border:1px solid #dae4e9;border-radius:16px;padding:11px 13px;background:#fffefb;font:13px/1.72 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#405f7a}
+.msg.user{justify-content:flex-end}.msg.user .avatar{order:2}.msg.user .bubble{background:#f3f7f8}
+.exam-input{margin-top:14px;border-top:1px solid #e3e7e8;padding-top:14px}
+.exam-actions{display:flex;gap:9px;flex-wrap:wrap;margin-top:10px}
+.observation-list{display:grid;gap:9px;margin-top:12px}
+.observation{border:1px solid #dce5e9;border-radius:15px;padding:11px;background:#fbfaf6}
+.observation b{font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#355c7e}
+.observation p{margin:5px 0 0;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#688098}
+.feedback-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
+.feedback-item{border:1px solid #dce5e9;border-radius:16px;padding:12px;background:#fbfaf6}
+.feedback-item h4{margin:0 0 6px;font-size:13px}
+.feedback-item p{margin:0;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#688098}
+.prototype-note{margin-top:12px;padding:10px 12px;border-left:3px solid #9abbd1;background:#f1f6f8;border-radius:0 12px 12px 0;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#5d7890}
+@media(max-width:900px){
+  .exam-layout,.feedback-grid{grid-template-columns:1fr}
+}
+
+
+/* ===== v3.2 · Module 1 产品验证增强 ===== */
+.exam-subtabs{display:flex;gap:8px;flex-wrap:wrap;margin:14px 0 18px}
+.exam-subtabs button{
+  border:1px solid #d4e1e8;background:#fbfaf6;color:#647e97;border-radius:999px;
+  padding:9px 13px;font:700 12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif
+}
+.exam-subtabs button.active{background:#dcebf3;color:#315d83;border-color:#bcd5e4}
+.exam-subpage{display:none}.exam-subpage.active{display:block}
+.iteration-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.iter-card{
+  border:1px solid #dce5e9;border-radius:18px;padding:15px;background:#fbfaf6;position:relative
+}
+.iter-card h4{margin:0 0 6px;font-size:16px}
+.iter-card .version{display:inline-block;margin-bottom:9px;padding:4px 8px;border-radius:999px;background:#e8f1f6;color:#476e91;font:800 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.iter-card .problem,.iter-card .fix{margin-top:10px;padding:9px 10px;border-radius:12px;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.iter-card .problem{background:#f7f1ec;color:#7a6759}.iter-card .fix{background:#eef5f7;color:#58758e}
+.prompt-preview{margin-top:10px;background:#f4f6f6;border:1px solid #e0e6e8;border-radius:12px;padding:10px;white-space:pre-wrap;font:11px/1.55 ui-monospace,SFMono-Regular,Consolas,monospace;color:#506a80;max-height:210px;overflow:auto}
+.risk-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+.risk-card{border:1px solid #dce5e9;border-radius:18px;padding:15px;background:#fbfaf6}
+.risk-card h4{margin:0 0 8px;font-size:14px}
+.risk-tag{display:inline-block;margin-bottom:8px;padding:4px 8px;border-radius:999px;background:#f1ece7;color:#7b6756;font:800 10px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.risk-card p{margin:5px 0;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#637b91}
+.risk-card strong{color:#395f7e}
+.test-form{display:grid;grid-template-columns:160px 1fr;gap:10px}
+.test-form .full{grid-column:1/-1}
+.test-list{display:grid;gap:10px;margin-top:14px}
+.test-row{border:1px solid #dce5e9;border-radius:16px;padding:12px;background:#fbfaf6}
+.test-row-head{display:flex;justify-content:space-between;gap:10px;align-items:center}
+.test-row h4{margin:0;font-size:13px}
+.test-row p{margin:6px 0 0;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#667f95}
+.test-status{padding:4px 8px;border-radius:999px;background:#edf4f7;color:#577a97;font:700 10px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+.linkage-bar{display:flex;gap:9px;flex-wrap:wrap;margin-top:14px;padding-top:13px;border-top:1px solid #e2e7e9}
+.linkage-note{margin-top:9px;font:11px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#768c9f}
+.weakpoint-card{border:1px solid #dce5e9;border-radius:16px;padding:12px;background:#fbfaf6}
+.weakpoint-card b{font-size:13px}.weakpoint-card p{margin:5px 0 0;font:12px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#667f95}
+.queue-card{border:1px dashed #cbdbe4;border-radius:16px;padding:12px;background:#f7fafb}
+.queue-card h4{margin:0 0 7px}.queue-card p{margin:0;font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#657e94}
+.case-pill{display:inline-block;margin:3px 5px 3px 0;padding:4px 7px;border-radius:999px;background:#edf4f7;color:#5e7b94;font:700 10px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+@media(max-width:900px){
+  .iteration-grid,.risk-grid,.test-form{grid-template-columns:1fr}
+  .test-form .full{grid-column:auto}
+}
+
+
+/* ===== v4.0 · 真实用户版模拟口试 ===== */
+.demo-strip{display:flex;gap:8px;flex-wrap:wrap;margin:12px 0 14px}
+.demo-strip button{
+  border:1px solid #d3e1e8;background:#fbfaf6;color:#617d96;border-radius:999px;
+  padding:8px 11px;font:700 11px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif
+}
+.demo-strip button.active{background:#dcebf3;color:#315d83;border-color:#bcd5e4}
+.demo-hint{margin:8px 0 0;font:11px/1.6 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#7a8f9f}
+.mic-panel{
+  margin-top:12px;border:1px solid #d9e4e9;background:#f7fafb;border-radius:16px;padding:12px
+}
+.mic-line{display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+.mic-record{
+  width:42px;height:42px;border-radius:50%;border:0;background:#6e9fca;color:white;font-size:20px;
+  display:grid;place-items:center;box-shadow:0 7px 16px rgba(73,119,157,.14)
+}
+.mic-record.recording{animation:pulse 1.2s infinite}
+@keyframes pulse{0%,100%{box-shadow:0 0 0 0 rgba(110,159,202,.28)}50%{box-shadow:0 0 0 11px rgba(110,159,202,0)}}
+.mic-stop{border:1px solid #d4e0e6;background:#fffefb;color:#5c7690;border-radius:12px;padding:8px 11px;font-weight:700}
+.rec-status{font:12px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#668097}
+.audio-box{margin-top:10px;display:none}
+.audio-box audio{width:100%}
+.exam-tip{
+  padding:10px 12px;border-left:3px solid #91b3ca;background:#f1f6f8;border-radius:0 12px 12px 0;
+  font:12px/1.65 -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif;color:#5c7790
+}
+.flow-badge{display:inline-flex;gap:6px;align-items:center;background:#edf4f7;border-radius:999px;padding:5px 8px;color:#577893;font:700 10px -apple-system,BlinkMacSystemFont,"Segoe UI","PingFang SC","Microsoft YaHei",sans-serif}
+
+.score-summary{display:grid;grid-template-columns:1.2fr repeat(4,1fr);gap:9px;margin:0 0 14px}.score-overview,.score-item{border:1px solid rgba(155,190,211,.55);background:linear-gradient(135deg,#f3f9fc,#fbfaf5);border-radius:11px;padding:12px}.score-overview b{display:block;font-size:25px;color:var(--ink);line-height:1.1;margin-top:5px}.score-item b{display:block;color:#4a7196;font-size:12px;line-height:1.25}.score-item span{display:block;font-size:20px;font-weight:750;color:var(--ink);margin-top:8px}.correction-level{border:1px solid rgba(183,207,221,.72);border-radius:10px;padding:13px;margin-top:10px;background:#fcfdfd}.correction-level h4{margin:0 0 7px;color:var(--ink)}.correction-level p{margin:5px 0}.error-mark{background:#fce8e5;color:#9d4237;border-radius:4px;padding:1px 3px}.fix-mark{background:#e4f4ed;color:#257356;border-radius:4px;padding:1px 3px}.recommend-box{background:#eff7fb;border:1px solid #c6e0ed;border-radius:9px;padding:10px;margin-top:10px}.recommend-box b{color:#315f83}.task-reason{color:#6885a1;font-size:12px;margin-top:2px}
+@media(max-width:760px){.score-summary{grid-template-columns:1fr 1fr}.score-overview{grid-column:span 2}}
+</style>
+</head>
+<body>
+<div class="shell">
+  <aside class="side">
+    <div class="brandmark">雅</div>
+    <nav>
+      <button class="navbtn active" data-page="home" title="首页">⌂</button>
+      <button class="navbtn" data-page="practice" title="练口语">◌</button>
+      <button class="navbtn" data-page="exam" title="模拟口试" onclick="showPage('exam')">◎</button>
+      <button class="navbtn" data-page="library" title="学习库">▱</button>
+      <button class="navbtn" data-page="record" title="学习记录">▤</button>
+    </nav>
+    <div class="side-bottom"><div class="small-icon">⚙</div><div class="small-icon">☼</div></div>
+  </aside>
+
+  <main class="main">
+    <section class="page active" id="page-home" style="padding:0">
+      <div class="hero">
+        <h1>Good morning</h1>
+        <div class="sub">Let’s practice speaking, just a little at a time.</div>
+        <div class="birds">⌁ ⌁</div>
+
+        <div class="mountain">
+          <svg viewBox="0 0 1000 180" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="m1" x1="0" x2="0" y1="0" y2="1"><stop offset="0" stop-color="#bcd2df" stop-opacity=".88"/><stop offset="1" stop-color="#e4edf1" stop-opacity=".45"/></linearGradient>
+              <filter id="blur1"><feGaussianBlur stdDeviation="2.6"/></filter>
+            </defs>
+            <path d="M0 136 L90 93 L162 118 L245 61 L322 116 L405 84 L494 122 L565 70 L655 110 L751 74 L836 118 L914 88 L1000 118 L1000 180 L0 180 Z" fill="url(#m1)" filter="url(#blur1)"/>
+            <path d="M0 152 L120 110 L210 140 L296 95 L365 142 L460 108 L548 144 L640 102 L730 139 L822 104 L920 145 L1000 128 L1000 180 L0 180 Z" fill="#85aac2" opacity=".38"/>
+          </svg>
+        </div>
+        <div class="lake"></div>
+        <div class="sun"></div>
+
+        <div class="prompt-card">
+          <div class="label">Today’s speaking plan · 今天的口语任务</div>
+          <div class="today-tasks">
+            <div class="today-task" id="task-p1" onclick="showPage('practice');switchPart('p1')">
+              <div class="today-part">P1</div>
+              <div class="today-copy">
+                <b>再练 3 道短回答</b>
+                <small>重点：短、自然、少出错 · 当前 2 / 5</small>
+              </div>
+              <button class="today-go" aria-label="进入 Part 1">›</button>
+            </div>
+            <div class="today-task" id="task-p2" onclick="showPage('practice');switchPart('p2')">
+              <div class="today-part">P2</div>
+              <div class="today-copy">
+                <b>完成 1 次素材复用</b>
+                <small>重点：用旧故事覆盖新题 · 当前 1 / 2</small>
+              </div>
+              <button class="today-go" aria-label="进入 Part 2">›</button>
+            </div>
+            <div class="today-task" id="task-p3" onclick="showPage('practice');switchPart('p3')">
+              <div class="today-part">P3</div>
+              <div class="today-copy">
+                <b>再练 2 道观点题</b>
+                <small>重点：先找思路，再组织 PRE · 当前 1 / 3</small>
+              </div>
+              <button class="today-go" aria-label="进入 Part 3">›</button>
+            </div>
+          </div>
+        </div>
+
+        <div class="wave left" id="waveLeft"></div>
+        <div class="wave right" id="waveRight"></div>
+        <div class="mic-wrap"><button class="mic" id="heroMic" title="开始练习">◉</button></div>
+        <div class="tap">Continue today’s focus · P2</div>
+
+        <div class="branch">
+          <svg viewBox="0 0 120 160" aria-hidden="true">
+            <path d="M60 160 C63 122 72 93 83 57 C90 36 99 18 110 6" fill="none" stroke="#668eae" stroke-width="1.5" opacity=".8"/>
+            <path d="M76 87 C58 79 47 69 38 55 M86 50 C74 43 68 32 64 20 M71 110 C50 111 37 103 25 91" fill="none" stroke="#7ba0bd" stroke-width="1.2"/>
+            <g fill="#9fbdcf" opacity=".82"><ellipse cx="47" cy="69" rx="4" ry="9"/><ellipse cx="36" cy="55" rx="4" ry="8"/><ellipse cx="66" cy="21" rx="4" ry="9"/><ellipse cx="76" cy="42" rx="4" ry="8"/><ellipse cx="39" cy="103" rx="4" ry="8"/></g>
+          </svg>
+        </div>
+      </div>
+
+      <div class="home-content">
+        <div class="grid3">
+          <div class="soft-card">
+            <h3>Your streak</h3>
+            <div class="big">7 <span style="font-size:15px">days</span></div>
+            <div class="streak"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i class="off"></i></div>
+          </div>
+          <div class="soft-card">
+            <h3>Progress</h3>
+            <div style="display:flex;align-items:center;gap:13px;margin-top:10px">
+              <div class="progress-ring"><b>68%</b></div>
+              <p style="margin:0">Keep going.<br/>You’re on track.</p>
+            </div>
+          </div>
+          <div class="soft-card">
+            <h3>Saved phrases</h3>
+            <p id="savedPreview">relax and unwind<br/>broaden my horizons<br/>step out of my comfort zone</p>
+          </div>
+          <div class="soft-card" onclick="showPage('exam')" style="cursor:pointer">
+            <h3>Mock speaking test</h3>
+            <div class="big" style="font-size:23px">模拟口试 ›</div>
+            <p>Part 1 → Part 2 → Part 3<br/>完成一场连贯口试练习</p>
+          </div>
+        </div>
+        <div class="footer">You’re doing beautifully. 〰</div>
+      </div>
+    </section>
+
+    <section class="page" id="page-practice">
+      <div class="section-title">
+        <div><h2>Speaking practice</h2><p>三个 Part 用三种不同的方法练。</p></div>
+        <div class="part-switch">
+          <button id="part-p1" onclick="switchPart('p1')">Part 1</button>
+          <button id="part-p2" class="active" onclick="switchPart('p2')">Part 2</button>
+          <button id="part-p3" onclick="switchPart('p3')">Part 3</button>
+        </div>
+      </div>
+
+      <div class="practice-grid">
+        <div class="panel">
+          <div id="panel-p1" class="part-panel hidden">
+            <h3>Part 1 · 说得短一点，也自然一点</h3>
+            <div class="helper">直接回答 → 一个原因 → 一个个人细节。先把你原本的想法说顺，不为了“高级”硬改。</div>
+            <label class="helper" style="margin-top:16px">Question</label>
+            <textarea id="p1q">Do you like crowded places?</textarea>
+            <label class="helper">Your answer</label>
+            <textarea id="p1input" placeholder="输入你的英文回答…"></textarea>
+            <div class="row" style="margin-top:12px"><button class="primary" onclick="runP1()">查看批改建议</button><button class="secondary" onclick="fillCorrectionSample()">填入练习示例</button></div>
+          </div>
+
+          <div id="panel-p2" class="part-panel">
+            <h3>Part 2 · 尽量复用你已经会说的故事</h3>
+            <div class="helper">先判断人物 / 经历 / 地点 / 物品，再从核心素材里找最合适的内容。</div>
+            <label class="helper" style="margin-top:14px">Question</label>
+            <textarea id="p2q">Describe a friend who is good at music.</textarea>
+            <div class="row" style="margin-top:12px"><button class="primary" onclick="runP2()">找可复用素材</button></div>
+            <div id="p2AnswerArea" class="hidden" style="margin-top:16px">
+              <label class="helper">Your answer</label>
+              <textarea id="p2input" placeholder="根据选中的素材，组织你的完整回答…"></textarea>
+              <div class="row" style="margin-top:12px"><button class="primary" onclick="runP2Correction()">查看批改建议</button><button class="secondary" onclick="fillP2Sample()">填入练习示例</button></div>
+            </div>
+          </div>
+
+          <div id="panel-p3" class="part-panel hidden">
+            <h3>Part 3 · 先找到观点，再组织语言</h3>
+            <div class="helper">如果没思路，先从通用观点里找 2–4 个角度；选定以后再整理成 Point → Reason → Example。</div>
+            <label class="helper" style="margin-top:14px">Question</label>
+            <textarea id="p3q">Why do you think music is important in people’s lives?</textarea>
+            <div class="row" style="margin-top:12px"><button class="primary" onclick="suggestIdeas()">先给我几个角度</button></div>
+            <div id="p3AnswerArea" class="hidden" style="margin-top:16px">
+              <label class="helper">Your answer</label>
+              <textarea id="p3input" placeholder="根据选择的观点，组织你的完整回答…"></textarea>
+              <div class="row" style="margin-top:12px"><button class="primary" onclick="runP3Correction()">查看批改建议</button><button class="secondary" onclick="fillP3Sample()">填入练习示例</button></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <div class="output" id="practiceOutput"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="page" id="page-exam">
+      <div class="section-title">
+        <div>
+          <h2>模拟口试</h2>
+          <p>按真实口试节奏练习：回答过程中不打断点评，结束后统一复盘。</p>
+        </div>
+        <span class="flow-badge">Part 1 → Part 2 → Part 3 → 反馈</span>
+      </div>
+
+      <div class="panel" style="margin-bottom:14px">
+        <h3 style="margin-bottom:5px">开始练习</h3>
+        <div class="helper">请像正式考试一样，用英文自然回答。完成练习后可查看本场反馈。</div>
+        <div class="demo-hint">不知道如何开始时，可以使用参考作答了解回答长度和结构。</div>
+      </div>
+
+      <div class="exam-stagebar">
+        <span class="exam-stage active" id="examStageP1">Part 1</span>
+        <span class="exam-stage" id="examStageP2">Part 2</span>
+        <span class="exam-stage" id="examStageP3">Part 3</span>
+        <span class="exam-stage" id="examStageFeedback">Feedback</span>
+      </div>
+
+      <div class="exam-layout">
+        <div class="panel">
+          <div class="story-head">
+            <div>
+              <h3>Examiner conversation</h3>
+              <div class="helper">考官保持中性、简洁；考试过程中只提问，不实时纠错。</div>
+            </div>
+            <button class="secondary" onclick="resetExam()">重新开始</button>
+          </div>
+
+          <div class="chatbox" id="examChat" style="margin-top:14px"></div>
+
+          <div class="exam-input" id="examInputArea">
+            <label class="helper">Your answer</label>
+            <textarea id="examAnswer" placeholder="输入英文回答…"></textarea>
+
+            <div class="mic-panel">
+              <div class="mic-line">
+                <button class="mic-record" id="recordBtn" onclick="startLocalRecording()" title="开始录音">🎙</button>
+                <button class="mic-stop" id="stopRecordBtn" onclick="stopLocalRecording()" disabled>停止录音</button>
+                <span class="rec-status" id="recordStatus">录音仅供本次回放，不会上传或自动转成文字。</span>
+              </div>
+              <div class="audio-box" id="audioBox"><audio id="recordedAudio" controls></audio></div>
+            </div>
+
+            <div class="exam-actions">
+              <button class="primary" onclick="submitExamAnswer()">提交回答</button>
+              <button class="secondary" onclick="fillReferenceAnswer()">填入参考作答</button>
+              <button class="secondary" onclick="finishExam()">结束并查看反馈</button>
+            </div>
+            <div class="exam-tip" style="margin-top:12px">
+              录音仅供本次回放，不会上传或自动转成文字。若浏览器不允许访问麦克风，仍可直接输入文字练习。
+            </div>
+          </div>
+        </div>
+
+        <div class="panel">
+          <h3>本场练习</h3>
+          <div class="helper">查看当前阶段和已完成的回答数量。</div>
+          <div class="observation-list" id="examNotes">
+            <div class="observation"><b>等待回答</b><p>正式反馈会在口试结束后统一出现。</p></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="panel hidden" id="examFeedback" style="margin-top:18px">
+        <h3>Feedback · 本次复盘</h3>
+        <div class="helper" style="margin-bottom:12px">本场参考成绩用于帮助你安排下一步练习，不代表正式雅思成绩。</div>
+        <div class="score-summary" id="scoreSummary"></div>
+        <div class="feedback-grid" id="feedbackGrid"></div>
+        <div class="linkage-bar">
+          <button class="primary" onclick="saveWeakPointsToLibrary()">保存薄弱点到学习库</button>
+          <button class="secondary" onclick="saveExamToRecord()">保存本次练习</button>
+          <button class="secondary" onclick="resetExam()">再练一次</button>
+        </div>
+        <div class="linkage-note" id="linkageStatus">所有记录都保存在当前浏览器中。</div>
+      </div>
+    </section>
+
+<section class="page" id="page-library">
+      <div class="section-title">
+        <div><h2>My library</h2><p>把已经学过的内容留在这里，下次继续用。</p></div>
+      </div>
+      <div class="library-tabs">
+        <button class="active" id="lib-phrases" onclick="showLib('phrases')">常用表达</button>
+        <button id="lib-stories" onclick="showLib('stories')">核心素材</button>
+        <button id="lib-ideas" onclick="showLib('ideas')">思路库</button>
+        <button id="lib-weak" onclick="showLib('weak')">个人薄弱点</button>
+      </div>
+      <div id="libraryContent"></div>
+    </section>
+
+    <section class="page" id="page-record">
+      <div class="section-title">
+        <div><h2>Learning notes</h2><p>只记录真正有用的：练过什么、收藏了什么。</p></div>
+      </div>
+      <div class="panel">
+        <h3>最近练习</h3>
+        <div id="historyList" class="helper">还没有练习记录。</div>
+      </div>
+      <div class="panel" style="margin-top:14px">
+        <h3>我的表达</h3>
+        <div id="favList" class="chips"></div>
+      </div>
+    </section>
+  </main>
+</div>
+
+<div class="mobile-nav">
+  <button class="active" data-page="home"><b>⌂</b>首页</button>
+  <button data-page="practice"><b>◌</b>练习</button>
+  <button data-page="exam" onclick="showPage('exam')"><b>◎</b>口试</button>
+  <button data-page="library"><b>▱</b>学习库</button>
+  <button data-page="record"><b>▤</b>记录</button>
+</div>
+<div class="pop hidden" id="pop"></div>
+
+<script>
+const DATA = {"product_name": "雅思伴学", "navigation": ["首页", "练口语", "我的学习库", "学习记录"], "home": {"current_speaking": 6.0, "target_speaking": 7.0, "estimated_minutes": 40, "tasks": {"p1": {"done": 2, "total": 5, "description": "短、自然、少出错"}, "p2": {"done": 1, "total": 2, "description": "核心素材串题复用"}, "p3": {"done": 1, "total": 3, "description": "常用观点 + PRE"}}, "total_progress": {"done": 4, "total": 10}}, "p1": {"principles": ["流畅优先：即使出现个别口误，也不要停顿或反复重说。", "最小化修改：优先保留用户原有观点与自然表达；只有答非所问、语法或表达明显有问题时才重写。", "开头避免机械重复，按语境使用不同自然开场。", "适度做同义替换，但不为了“高级”强行堆复杂词。", "P1 时间短，句子保持简单、直接、可说。"], "openings": [{"text": "To be honest, ...", "use": "真实偏好 / 否定回答"}, {"text": "Actually, ...", "use": "补充个人情况"}, {"text": "Well, I’d say ...", "use": "中性、自然"}, {"text": "Personally, I think ...", "use": "个人观点"}, {"text": "Definitely / Absolutely.", "use": "明确肯定"}, {"text": "Not really.", "use": "自然否定"}, {"text": "It really depends.", "use": "条件型回答"}, {"text": "That’s a bit hard to say.", "use": "需要区分情况"}], "reasoning": [{"text": "mainly because ...", "cn": "主要因为"}, {"text": "the main reason is that ...", "cn": "主要原因是"}, {"text": "For example, ...", "cn": "举例"}, {"text": "Besides, ...", "cn": "补充一点"}, {"text": "On top of that, ...", "cn": "除此之外"}], "phrases": [{"phrase": "relax and unwind", "cn": "放松、舒缓", "tags": ["emotion", "rest"]}, {"phrase": "not my cup of tea", "cn": "不是我喜欢/擅长的", "tags": ["preference"]}, {"phrase": "be really into", "cn": "很喜欢、很感兴趣", "tags": ["preference"]}, {"phrase": "be passionate about", "cn": "对……很有热情", "tags": ["preference"]}, {"phrase": "over the moon", "cn": "非常开心", "tags": ["emotion"]}, {"phrase": "feel anxious / nervous", "cn": "感到焦虑 / 紧张", "tags": ["emotion"]}, {"phrase": "a sense of achievement", "cn": "成就感", "tags": ["emotion", "growth"]}, {"phrase": "broaden my horizons", "cn": "拓宽视野", "tags": ["growth"]}, {"phrase": "barely have time to relax", "cn": "几乎没时间放松", "tags": ["busy"]}, {"phrase": "recharge my energy", "cn": "恢复精力", "tags": ["rest"]}, {"phrase": "escape from the hustle and bustle of city life", "cn": "暂时逃离城市的喧嚣忙碌", "tags": ["rest", "travel"]}, {"phrase": "step out of my comfort zone", "cn": "走出舒适区", "tags": ["growth"]}, {"phrase": "strengthen relationships", "cn": "增进关系", "tags": ["relationship"]}, {"phrase": "critical-thinking skills", "cn": "批判性思维能力", "tags": ["growth"]}, {"phrase": "problem-solving skills", "cn": "解决问题能力", "tags": ["growth"]}], "examples": [{"q": "Do you like crowded places?", "idea": "introvert → crowded places make me anxious → prefer quiet coffee shop/home", "answer": "To be honest, I don’t like crowded places, mainly because I’m an introvert, so being somewhere overly crowded makes me feel anxious and nervous. I’d rather stay in a quiet coffee shop or at home.", "reuse": ["introvert", "quiet places", "anxious", "I'd rather"]}, {"q": "Do you like art?", "idea": "not interested → not talented → too abstract", "answer": "To be honest, art isn’t really my cup of tea. I’ve never been very good at drawing or painting, and I find a lot of artworks too abstract for me.", "reuse": ["not my cup of tea", "too abstract"]}, {"q": "Do you wear headphones in public places?", "idea": "bus/subway → music → relax", "answer": "Yes, quite often. I usually wear headphones on the bus or subway because listening to music helps me relax and unwind.", "reuse": ["relax and unwind"]}]}, "p2": {"principles": ["导入题库后先按人物、经历、地点、物品进行聚类，不逐题从零准备。", "先建立少量核心素材，再显示每个素材可覆盖的题目，优先复用已有事实和句型。", "主体叙事以一般过去时为主；可加入现在完成时强调影响持续至今，或条件句表达反思。", "题目只需要局部变化时，保留已有句子，减少记忆负担。", "素材卡区分“核心事实”“题目适配情节”“可复用句子”，避免把为某道题扩写的情节误当永久个人事实。"], "story_patterns": [{"name": "过去时主体", "examples": ["It happened when I was ...", "At that time, I felt ... because ...", "I still remember clearly that ..."]}, {"name": "影响持续至今", "examples": ["This experience has stayed with me ever since."]}, {"name": "反思 / 条件句", "examples": ["If it hadn’t happened, I wouldn’t have realized how important ... is.", "If my friend hadn’t helped me, I wouldn’t have had the courage to ...", "If I hadn’t made that mistake, I wouldn’t have learned to ..."]}], "stories": [{"id": "rebecca", "category": "人物", "name": "Rebecca", "core_facts": ["小学认识，认识约10年", "好朋友", "擅长写歌和唱 indie folk music", "有创造力", "家里有一家小书店", "会给建议和鼓励"], "adaptive_details": ["一起旅行", "一起滑雪", "帮我做决定", "推荐心理学/音乐相关内容"], "coverage": ["重要朋友", "擅长音乐的人", "有创造力的人", "认识很久的人", "在家族企业工作的人", "说服你做某事的人", "帮助你做决定的人", "一起做计划的人"], "sentences": ["We’ve known each other since primary school, and we’ve been close friends ever since.", "She’s someone I can always rely on.", "She’s really gifted in writing and singing indie folk music.", "She often encourages me to step out of my comfort zone."]}, {"id": "finland_ski", "category": "经历", "name": "芬兰滑雪", "core_facts": ["第一次尝试滑雪", "在芬兰滑雪场", "和 Rebecca 一起", "开始紧张，后来很兴奋", "走出舒适区"], "adaptive_details": ["等待 ski lift", "第一次用外语和教练沟通", "在社交媒体看到同一雪场视频", "Rebecca 说服我尝试"], "coverage": ["第一次尝试的兴奋活动", "户外运动", "等待特别事情", "初次用外语沟通", "被别人说服做某事", "和别人做活动计划", "社交媒体趣事"], "sentences": ["I was nervous at first because I had never tried anything like it before.", "It pushed me out of my comfort zone.", "I felt a huge sense of excitement and accomplishment.", "If Rebecca hadn’t encouraged me, I might never have given it a try."]}, {"id": "yunnan_rainforest", "category": "地点", "name": "云南雨林", "core_facts": ["云南南部", "自然景色和 biodiversity", "猴子和彩色鸟类", "空气新鲜、环境安静", "适合放松"], "adaptive_details": ["迷路", "看动物", "雨林徒步", "想再次去", "竹屋建筑"], "coverage": ["自然之地", "安静的地方", "看到动物的地方", "长途旅行", "想再去的旅行", "迷路", "有趣建筑"], "sentences": ["It’s famous for its incredible biodiversity and distinctive natural scenery.", "The trip helped me relax and unwind and feel close to nature.", "I’d definitely love to go back and explore more."]}, {"id": "crystal_necklace", "category": "物品", "name": "水晶项链", "core_facts": ["家里保存多年的水晶项链", "与奶奶有关", "有纪念意义", "外观漂亮"], "adaptive_details": ["小时候不小心弄坏", "生日礼物 / 家族传承版本"], "coverage": ["漂亮的物品", "家中老物件", "弄坏东西", "有纪念意义的物品"], "sentences": ["It has strong sentimental value for my family.", "This experience has stayed with me ever since.", "If I hadn’t told the truth, I might have felt guilty for a long time."]}, {"id": "personality_psychology", "category": "物品", "name": "Personality Psychology", "core_facts": ["心理学相关书", "与 MBTI / 自我理解有关", "用于拓展心理学知识"], "adaptive_details": ["Rebecca 推荐心理学", "读书帮助 IELTS / 自我理解"], "coverage": ["有用的书", "感兴趣的科学领域", "想拥有的好习惯 / 阅读"], "sentences": ["It helped me understand myself from a different perspective.", "It broadened my horizons and deepened my interest in psychology."]}, {"id": "sweet_moment", "category": "地点", "name": "Sweet Moment 小零食店", "core_facts": ["离家约十分钟", "小而温馨", "零食种类多", "服务人员友好"], "adaptive_details": ["买零食送 Rebecca", "优质服务"], "coverage": ["喜欢去的商店", "优质服务", "买礼物的地方"], "sentences": ["The staff made me feel welcomed and valued as a customer.", "The shop has a cozy atmosphere and a wide variety of snacks."]}], "classification_demo": [{"question": "Describe a friend who is good at music.", "category": "人物", "recommended_story": "Rebecca"}, {"question": "Describe a person who persuaded you to do something.", "category": "人物", "recommended_story": "Rebecca + 芬兰滑雪"}, {"question": "Describe a long journey you had.", "category": "经历", "recommended_story": "云南雨林"}, {"question": "Describe a time when you waited for something special.", "category": "经历", "recommended_story": "芬兰滑雪"}, {"question": "Describe a natural place you would like to visit.", "category": "地点", "recommended_story": "云南雨林"}, {"question": "Describe a place where you saw animals.", "category": "地点", "recommended_story": "云南雨林"}, {"question": "Describe an object you think is beautiful.", "category": "物品", "recommended_story": "水晶项链"}, {"question": "Describe an old thing your family has kept.", "category": "物品", "recommended_story": "水晶项链"}]}, "p3": {"principles": ["用户有思路：优先保留用户观点，再按 Point → Reason → Example 组织。", "用户没思路：先从万能论点库推荐 2–4 个可用角度，让用户选择后再展开。", "不同开头、连接词和句型用于提升自然度，但不能为了套模板而机械重复。", "Conclusion 可选，重点是观点、理由和例子完整，不用为了时长重复同一观点。"], "opening_types": [{"type": "讨论/平衡", "templates": ["It really depends on the situation.", "It’s hard to say whether ..."]}, {"type": "普通观点", "templates": ["In my opinion, ...", "From my perspective, ...", "I’d say ..."]}, {"type": "思考缓冲", "templates": ["That’s a really interesting question. I’ve never thought about it before, but I guess ..."]}], "linker_sets": [["To begin with", "Besides", "For example", "Last but not least"], ["First", "In addition", "For example", "Finally"], ["First of all", "Moreover", "Take ... as an example", "All in all"], ["Initially", "On top of that", "For instance", "To sum up"]], "ideas": [{"id": "pressure", "name": "社会压力", "keywords": ["immense social pressure", "intense competition", "fast-paced society", "feel exhausted"], "example": "People nowadays often live under intense social pressure and feel exhausted.", "topics": ["work", "health", "entertainment", "young people"]}, {"id": "relax", "name": "放松减压", "keywords": ["release pressure", "refresh the mind", "relax and unwind", "escape from the hustle and bustle"], "example": "A short break can help people relax and unwind and refresh their minds.", "topics": ["music", "movies", "travel", "nature", "sports"]}, {"id": "health", "name": "健康", "keywords": ["keep healthy", "strengthen muscles", "boost the immune system", "improve mental health"], "example": "Regular exercise can improve both physical and mental health.", "topics": ["sports", "outdoor activities", "lifestyle", "children"]}, {"id": "relationships", "name": "人际关系", "keywords": ["strengthen relationships", "emotional support", "expand social circle", "communication", "teamwork"], "example": "Shared activities can strengthen relationships and improve communication skills.", "topics": ["friends", "music", "school", "work", "social media", "family"]}, {"id": "efficiency", "name": "效率与便利", "keywords": ["enhance efficiency", "improve productivity", "bring convenience", "save time and effort"], "example": "Digital tools can save time and make daily tasks more efficient.", "topics": ["technology", "shopping", "transport", "work"]}, {"id": "money", "name": "金钱与职业", "keywords": ["increase income", "job opportunities", "financial stability", "reduce costs"], "example": "Learning a practical skill can create more job opportunities and improve financial stability.", "topics": ["education", "skills", "business", "technology"]}, {"id": "growth", "name": "技能与成长", "keywords": ["boost confidence", "time management", "problem-solving", "gain a sense of achievement", "personal growth"], "example": "Trying something new can build confidence and problem-solving skills.", "topics": ["education", "travel", "sports", "children", "work"]}, {"id": "creativity", "name": "创造力与想象力", "keywords": ["boost creativity", "foster imagination", "innovative thinking"], "example": "Exposure to different stories and art forms can foster imagination.", "topics": ["music", "art", "children", "stories", "education"]}, {"id": "mental", "name": "心理健康", "keywords": ["reduce anxiety", "feel reassured", "emotional balance", "inner peace"], "example": "Supportive relationships can reduce anxiety and improve emotional wellbeing.", "topics": ["friends", "family", "health", "nature"]}, {"id": "thinking", "name": "逻辑与思维", "keywords": ["critical thinking", "logical thinking", "analytical skills", "problem-solving"], "example": "Strategy games can improve logical thinking and problem-solving skills.", "topics": ["education", "games", "science", "work"]}, {"id": "time", "name": "时间管理", "keywords": ["manage time wisely", "set priorities", "stay organized", "improve concentration"], "example": "Setting clear priorities helps people manage time wisely.", "topics": ["study", "work", "children", "habits"]}, {"id": "education", "name": "教育", "keywords": ["well-rounded education", "academic performance", "lifelong learning", "cultivate interest"], "example": "A well-rounded education can cultivate curiosity and lifelong learning.", "topics": ["school", "children", "science", "music", "reading"]}, {"id": "technology", "name": "科技影响", "keywords": ["digital communication", "online platforms", "bring convenience", "get addicted to devices"], "example": "Technology improves convenience, but overuse can reduce face-to-face interaction.", "topics": ["social media", "work", "history", "shopping", "children"]}, {"id": "environment", "name": "环境", "keywords": ["protect the environment", "reduce pollution", "raise awareness", "sustainable development"], "example": "Environmental education can raise awareness and encourage sustainable behavior.", "topics": ["animals", "travel", "transport", "government"]}, {"id": "culture", "name": "文化", "keywords": ["preserve traditional culture", "cultural exchange", "cross-cultural understanding", "cultural identity"], "example": "Travel and museums can promote cross-cultural understanding and strengthen cultural identity.", "topics": ["travel", "museums", "history", "language", "music"]}, {"id": "travel", "name": "旅行与体验", "keywords": ["broaden horizons", "explore new cultures", "enrich life experience", "open-minded"], "example": "Travelling exposes people to different lifestyles and broadens their horizons.", "topics": ["travel", "language", "young people"]}, {"id": "communication", "name": "沟通", "keywords": ["express opinions", "share ideas", "active listening", "interpersonal skills"], "example": "Group discussions help people practice active listening and express ideas clearly.", "topics": ["friends", "school", "work", "language"]}, {"id": "balance", "name": "工作生活平衡", "keywords": ["work-life balance", "avoid burnout", "reduce fatigue", "spend quality time"], "example": "A healthy work-life balance can reduce burnout and improve wellbeing.", "topics": ["work", "health", "family"]}, {"id": "responsibility", "name": "责任与价值观", "keywords": ["take responsibility", "show empathy", "respect others", "moral values"], "example": "Volunteering and family education can help people develop responsibility and empathy.", "topics": ["children", "family", "society", "apology"]}], "examples": [{"q": "Why do people like travelling?", "recommended": ["travel", "growth", "relax"], "outline": ["Point: travel is attractive for several reasons", "Reason: experience different cultures", "Example: try local food / customs", "Reason: personal growth + problem-solving", "Reason: relaxation"]}, {"q": "Do you think music is beneficial for children at school?", "recommended": ["creativity", "relationships", "relax"], "outline": ["Point: music benefits children", "Reason: creativity", "Example: different genres spark imagination", "Reason: communication / relationships", "Reason: relaxation"]}, {"q": "Should scientists explain their research process to the public?", "recommended": ["communication", "education", "responsibility"], "outline": ["Point: yes", "Reason: improve understanding and trust", "Example: explain how medicine was tested", "Reason: inspire children"]}, {"q": "What can children learn from the elderly?", "recommended": ["growth", "culture", "responsibility"], "outline": ["Point: valuable life lessons", "Reason: experience and wise decisions", "Reason: traditions and family values", "Example: grandparents' stories"]}, {"q": "Why are some people unwilling to wait?", "recommended": ["pressure", "technology", "time"], "outline": ["Point: instant gratification + fear of missing out", "Reason: modern instant services change expectations", "Example: food delivery", "Reason: worry about losing opportunities"]}]}, "glossary": {"introvert": "内向的人", "anxious": "焦虑的", "crowded": "拥挤的", "unwind": "放松、舒缓", "abstract": "抽象的", "prioritize": "确定优先级", "independently": "独立地", "biodiversity": "生物多样性", "sentimental": "有情感价值的", "reliable": "可靠的"}, "visible_copy_policy": {"avoid": ["AI Agent", "Prototype", "Demo", "Skill", "Prompt", "RAG", "Memory", "Content-driven"], "prefer": {"Skill": "回答原则 / 练习方式", "Story Bank": "核心素材 / 我的故事", "Phrase Bank": "常用表达", "Idea Bank": "思路库 / 常用观点", "Memory": "已有素材 / 学习记录"}}};
+DATA.p2.stories=DATA.p2.stories.filter(s=>s.id==="rebecca");
+DATA.p2.classification_demo=DATA.p2.classification_demo.filter(x=>x.recommended_story.includes("Rebecca"));
+const KEYS = {fav:"ysbx_water_fav_v2",history:"ysbx_water_history_v2",stories:"ysbx_water_stories_v2",testFeedback:"ysbx_exam_test_feedback_v32",weakPoints:"ysbx_exam_weak_points_v32",correctionQueue:"ysbx_exam_correction_queue_v32",plan:"ysbx_learning_plan_v1"};
+let currentPart="p2", currentLib="phrases", selectedIdeas=[], selectedP2Story="rebecca";
+
+const glossary={
+  "introvert":"内向的人","anxious":"焦虑的","crowded":"拥挤的","unwind":"放松、舒缓",
+  "abstract":"抽象的","prioritize":"确定优先级","independently":"独立地","biodiversity":"生物多样性",
+  "sentimental":"有情感价值的","reliable":"可靠的","achievement":"成就","perspective":"角度 / 观点"
+};
+const stop=new Set(["a","an","the","you","your","who","that","which","where","when","what","why","how","and","or","to","of","for","with","about","have","has","had","is","are","was","were","do","did","does","describe","something","someone"]);
+
+function $(id){return document.getElementById(id)}
+function getLS(k,f){try{const v=localStorage.getItem(k);return v?JSON.parse(v):f}catch(e){return f}}
+function setLS(k,v){localStorage.setItem(k,JSON.stringify(v))}
+function esc(s){return String(s??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#039;"}[m]))}
+function norm(s){return (s||"").toLowerCase().replace(/[^\p{L}\p{N}\s'-]/gu," ").replace(/\s+/g," ").trim()}
+function toks(s){return norm(s).split(" ").filter(x=>x&&!stop.has(x))}
+function wrapWords(t){
+  return esc(t).replace(/\b([A-Za-z][A-Za-z'-]*)\b/g,'<span class="trans" data-w="$1">$1</span>');
+}
+document.addEventListener("click",e=>{
+  const w=e.target.closest(".trans");
+  if(w){
+    const k=w.dataset.w.toLowerCase(),p=$("pop");
+    p.innerHTML=`<b>${w.dataset.w}</b><br>${glossary[k]||"当前词库未收录；手机可长按使用系统翻译。"}`;
+    p.classList.remove("hidden");
+    p.style.left=Math.min(e.clientX+8,innerWidth-245)+"px";
+    p.style.top=Math.min(e.clientY+8,innerHeight-86)+"px";
+  } else if(!e.target.closest("#pop")) $("pop").classList.add("hidden");
+});
+
+function showPage(page){
+  document.querySelectorAll(".page").forEach(x=>x.classList.remove("active"));
+  $("page-"+page).classList.add("active");
+  document.querySelectorAll("[data-page]").forEach(x=>x.classList.toggle("active",x.dataset.page===page));
+  if(page==="library")renderLibrary();
+  if(page==="record")renderRecord();
+  window.scrollTo({top:0,behavior:"smooth"});
+}
+document.querySelectorAll("[data-page]").forEach(b=>b.addEventListener("click",()=>showPage(b.dataset.page)));
+$("heroMic").onclick=()=>{showPage("practice");switchPart("p2")};
+
+function makeWave(id){
+  const el=$(id);let out="";
+  [7,13,19,11,23,31,17,9,15,27,37,21,12,18,29,13,8].forEach(h=>out+=`<span style="height:${h}px"></span>`);
+  el.innerHTML=out
+}
+makeWave("waveLeft");makeWave("waveRight");
+
+function switchPart(p){
+  currentPart=p;
+  ["p1","p2","p3"].forEach(x=>{
+    $("panel-"+x).classList.toggle("hidden",x!==p);
+    $("part-"+x).classList.toggle("active",x===p);
+  });
+  if(p==="p1")renderP1Intro();
+  if(p==="p2")renderP2Intro();
+  if(p==="p3")renderP3Intro();
+}
+function renderDailyTasks(){
+  const plan=getLS(KEYS.plan,null);
+  const p1=$("task-p1"),p2=$("task-p2"),p3=$("task-p3");
+  p1.querySelector(".today-part").textContent="P1";p1.querySelector(".today-copy").innerHTML=`<b>再练 3 道短回答</b><small>重点：短、自然、少出错 · 当前 2 / 5</small>`;p1.onclick=()=>{showPage("practice");switchPart("p1")};
+  p2.querySelector(".today-part").textContent="P2";p2.querySelector(".today-copy").innerHTML=`<b>完成 1 次素材复用</b><small>重点：用旧故事覆盖新题 · 当前 1 / 2</small>`;p2.onclick=()=>{showPage("practice");switchPart("p2")};
+  p3.querySelector(".today-part").textContent="P3";p3.querySelector(".today-copy").innerHTML=`<b>再练 2 道观点题</b><small>重点：先找思路，再组织 PRE · 当前 1 / 3</small>`;p3.onclick=()=>{showPage("practice");switchPart("p3")};
+  if(!plan)return;
+  if(plan.focus==="p1") p1.querySelector(".today-copy").innerHTML=`<b>完成 ${plan.count||3} 道快速回答</b><small>重点：${esc(plan.reason)}</small>`;
+  if(plan.focus==="p2") p2.querySelector(".today-copy").innerHTML=`<b>完成 1 次素材复述</b><small>重点：${esc(plan.reason)}</small>`;
+  if(plan.focus==="p3") p3.querySelector(".today-copy").innerHTML=`<b>完成 2 道 PRE 练习</b><small>重点：${esc(plan.reason)}</small>`;
+  if(plan.grammar){
+    const task=$("task-p3");
+    task.querySelector(".today-part").textContent="语法";
+    task.querySelector(".today-copy").innerHTML=`<b>完成 3 道准确性改错</b><small>重点：${esc(plan.grammar)}</small>`;
+    task.onclick=()=>{showPage("practice");switchPart("p1")};
+  }
+}
+function updateLearningPlan({focus="p1",reason,grammar=false}){
+  const plan={focus,reason,count:4,grammar:grammar?"巩固主谓一致和常用固定搭配":""};
+  setLS(KEYS.plan,plan);renderDailyTasks();return plan;
+}
+function renderP1Intro(){
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>回答原则</h4><p>流畅优先 · 最小修改 · 开头不要机械重复 · 适度同义替换 · 不堆复杂句。</p></div>
+    <div class="note"><h4>推荐结构</h4><div class="chips"><span class="chip">Direct answer</span><span class="chip">Reason</span><span class="chip">Personal detail</span></div></div>
+    <div class="note"><h4>常用表达</h4>${DATA.p1.phrases.slice(0,5).map(x=>`<div class="sentence">${esc(x.phrase)} · ${esc(x.cn)}</div>`).join("")}</div>`;
+}
+function fillCorrectionSample(){
+  $("p1input").value="I am agree that crowded places are noisy. People is always talking loudly, so I very very very dislike them.";
+}
+function markErrors(text){
+  return esc(text).replace(/I am agree/gi,'<span class="error-mark">$&</span>').replace(/people is/gi,'<span class="error-mark">$&</span>').replace(/I want talk about/gi,'<span class="error-mark">$&</span>').replace(/We know each other since/gi,'<span class="error-mark">$&</span>').replace(/I have know/gi,'<span class="error-mark">$&</span>').replace(/gifted in write and sing/gi,'<span class="error-mark">$&</span>').replace(/she write/gi,'<span class="error-mark">$&</span>').replace(/she sing/gi,'<span class="error-mark">$&</span>').replace(/my feeling are various/gi,'<span class="error-mark">$&</span>').replace(/it bring me/gi,'<span class="error-mark">$&</span>').replace(/Music are/gi,'<span class="error-mark">$&</span>').replace(/it help/gi,'<span class="error-mark">$&</span>').replace(/listen music/gi,'<span class="error-mark">$&</span>').replace(/music bring/gi,'<span class="error-mark">$&</span>').replace(/people who enjoys/gi,'<span class="error-mark">$&</span>').replace(/Music help/gi,'<span class="error-mark">$&</span>').replace(/music make/gi,'<span class="error-mark">$&</span>').replace(/very very very/gi,'<span class="error-mark">$&</span>');
+}
+function runP1(){
+  const q=$("p1q").value.trim(),answer=$("p1input").value.trim();
+  if(!answer){$("p1input").focus();return}
+  const lower=answer.toLowerCase();
+  const fixes=[];
+  if(/\bi am agree\b/.test(lower))fixes.push("“I am agree” 改为 “I agree”。");
+  if(/\bpeople is\b/.test(lower))fixes.push("people 应搭配 are，而不是 is。");
+  if(/\b(he|she) have\b/.test(lower))fixes.push("he/she 后通常使用 has。");
+  const repeat=(lower.match(/\bvery\b/g)||[]).length>=3;
+  const corrected=answer.replace(/\bI am agree\b/gi,"I agree").replace(/\bpeople is\b/gi,"people are").replace(/\b(he|she) have\b/gi,"$1 has").replace(/\bvery very very\b/gi,"really");
+  const short=(answer.match(/\b[A-Za-z]+(?:'[A-Za-z]+)?\b/g)||[]).length<12;
+  const plan=updateLearningPlan({focus:"p1",reason:short?"回答展开不足：补充原因和一个细节":fixes.length?"优先提高句子准确性":"巩固“观点 + 原因 + 细节”的回答结构",grammar:fixes.length>0});
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>你的回答</h4><p>${markErrors(answer)}</p></div>
+    <div class="correction-level"><h4>先改准确性</h4>${fixes.length?`<p>${fixes.map(esc).join("<br>")}</p><p><span class="fix-mark">${esc(corrected)}</span></p>`:"<p>本次没有发现可识别的基础错误。继续检查主谓一致和常用搭配。</p>"}</div>
+    <div class="correction-level"><h4>让表达更自然</h4><p>${repeat?"把重复的 very 换成更具体的表达，例如 really dislike 或 find them overwhelming。":"可以尝试加入个人感受，让原因更具体。"}</p><p><span class="fix-mark">I don’t really enjoy crowded places because I find them overwhelming. There is usually too much noise, and I feel more comfortable in quiet places.</span></p></div>
+    <div class="correction-level"><h4>下一步练习</h4><p>本次重点：${esc(plan.reason)}。</p><div class="recommend-box"><b>今日已为你增加 Part 1 强化任务</b><div class="task-reason">完成 4 道快速回答，并优先检查句子准确性。</div></div></div>
+    <button class="secondary" onclick="saveHistory('p1','${esc(q).replace(/'/g,"\\'")}','完成一次 P1 批改练习')">保存本次练习</button>`;
+}
+
+const p2Rules={
+  "人物":[["person",5],["someone",5],["friend",5],["people",3],["teacher",4],["who",2],["persuad",4],["encourag",4]],
+  "经历":[["experience",5],["activity",4],["journey",4],["trip",3],["first time",5],["plan",3],["conversation",3],["wait",3]],
+  "地点":[["place",5],["natural",4],["building",4],["shop",4],["where",2],["animal",3],["quiet",4]],
+  "物品":[["object",5],["thing",4],["book",4],["gift",4],["toy",4],["item",4],["old thing",5]]
+};
+function classifyP2(q){
+  const t=norm(q);let best="经历",bs=-1,hits=[];
+  Object.entries(p2Rules).forEach(([cat,rules])=>{
+    let s=0,hh=[];rules.forEach(([term,w])=>{if(t.includes(term)){s+=w;hh.push(term)}})
+    if(s>bs){best=cat;bs=s;hits=hh}
+  });
+  return {cat:best,hits}
+}
+function storyScore(story,q,cat){
+  const t=norm(q),qt=toks(q);let s=story.category===cat?7:0,reasons=[];
+  const blob=[...(story.coverage||[]),...(story.core_facts||[]),...(story.adaptive_details||[])].join(" ").toLowerCase();
+  qt.forEach(tok=>{if(blob.includes(tok)){s+=2.5;reasons.push(tok)}});
+  if(/friend|person|music|encourag|persuad/.test(t)&&story.id==="rebecca"){s+=9;reasons.push("人物主线")}
+  if(/first time|ski|activity|plan|foreign language|wait/.test(t)&&story.id==="finland_ski"){s+=10;reasons.push("滑雪主线")}
+  if(/place|natural|animal|quiet|building|journey/.test(t)&&story.id==="yunnan_rainforest"){s+=10;reasons.push("自然地点主线")}
+  if(/object|thing|beautiful|old|gift|broke/.test(t)&&story.id==="crystal_necklace"){s+=10;reasons.push("老物件主线")}
+  return {s,reasons:[...new Set(reasons)].slice(0,3)}
+}
+function renderP2Intro(){
+  const s=DATA.p2.stories[0];
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>先做什么？</h4><p>题目分类 → 找可复用核心素材 → 优先复用已有事实和句子 → 只补本题真正缺的细节。</p></div>
+    <div class="story-card"><div class="story-head"><h4>${esc(s.name)}</h4><span class="type">${esc(s.category)}</span></div>
+    <div class="chips" style="margin-top:10px">${s.core_facts.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div></div>`;
+}
+function runP2(){
+  const q=$("p2q").value.trim();if(!q)return;
+  const cls=classifyP2(q);
+  const ranked=DATA.p2.stories.map(s=>({...s,_m:storyScore(s,q,cls.cat)})).sort((a,b)=>b._m.s-a._m.s).slice(0,3);
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>题型判断</h4><div class="chips"><span class="chip">${cls.cat}</span>${cls.hits.slice(0,3).map(x=>`<span class="chip">${x}</span>`).join("")}</div></div>
+    ${ranked.map((s,i)=>`
+      <div class="story-card">
+        <div class="story-head"><h4>TOP ${i+1} · ${esc(s.name)}</h4><span class="type">${esc(s.category)}</span></div>
+        <div class="details">更适合复用的原因：${esc(s._m.reasons.join(" · ")||"题型与内容接近")}</div>
+        <div class="chips" style="margin-top:10px">${s.core_facts.slice(0,4).map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div>
+        <div class="details" style="margin-top:11px"><b>可复用句子</b></div>
+        ${s.sentences.slice(0,3).map(x=>`<div class="sentence">${wrapWords(x)}</div>`).join("")}
+        <button class="secondary" style="margin-top:10px" onclick="useP2Story('${s.id}')">使用这组素材开始作答</button>
+      </div>`).join("")}
+    <div class="note"><h4>下一步</h4><p>选择一组素材后，按“人物介绍 → 认识过程 → 音乐特点 → 为什么重要”组织回答。</p></div>`;
+}
+const P2_REFERENCE_ANSWER="When I think about this topic, the first person that pops into my mind is my best friend Rebecca, who I have known for donkey's years. We still hang out nowadays to catch up and have some great fun. In fact, we’ve known each other since primary school, and we’ve been close friends ever since.\n\nI often listen to her music at her home on weekends, and it sounds absolutely charming. Whenever I hear her sing in person or listen to the demos she records and shares with me online, I feel a deep sense of enjoyment and am also tremendously proud of her.\n\nShe’s really gifted in writing and singing folk music. She even blends traditional folk melodies with personal tales about friendship and self-growth, which makes her creations exceptionally distinctive.\n\nWhen it comes to my feelings about her songs, I would say my feeling are various. For one thing, knowing how much time she practices every single day, she truly deserves the success she has achieved because of her relentless hard work. I even think there will be a day when her songs can be heard all over the world instead of just by me. For another, her songs have a magic that can make me calm down when I encounter difficulties. Also, it brings me a sense of warmth and connection.\n\nIn conclusion, that’s why I really enjoy listening to her singing and find it truly encouraging.";
+function useP2Story(id){
+  selectedP2Story=id;
+  $("p2AnswerArea").classList.remove("hidden");
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>已选择 Rebecca 素材</h4><p>下面这段回答依次覆盖了人物介绍、认识过程、音乐特点和她对你的重要性。</p></div>
+    <div class="correction-level"><h4>参考作答</h4><p><span class="fix-mark">${esc(P2_REFERENCE_ANSWER)}</span></p></div>
+    <div class="note"><h4>自己作答时可以这样组织</h4><div class="chips"><span class="chip">人物介绍</span><span class="chip">认识过程</span><span class="chip">音乐特点</span><span class="chip">为什么重要</span></div></div>`;
+  $("p2input").focus();
+}
+function fillP2Sample(){
+  $("p2input").value="When I think about this topic, the first person that pops into my mind is my best friend Rebecca, who I have know for donkey's years. We still hang out nowadays to catch up and have some great fun. In fact, we’ve known each other since primary school, and we’ve been close friends ever since.\n\nI often listen to her music at her home on weekends, and it sounds absolutely charming. Whenever I hear her sing in person or listen to the demos she records and shares with me online, I feel a deep sense of enjoyment and am also tremendously proud of her.\n\nShe’s really gifted in write and sing folk music. She even blends traditional folk melodies with personal tales about friendship and self-growth, which makes her creations exceptionally distinctive.\n\nWhen it comes to my feelings about her songs, I would say my feeling are various. For one thing, knowing how much time she practices every single day, she truly deserves the success she has achieved because of her relentless hard work. For another, her songs have a magic that can make me calm down when I encounter difficulties. Also, it bring me a sense of warmth and connection.\n\nIn conclusion, that’s why I really enjoy listening to her singing and find it truly encouraging.";
+}
+function runP2Correction(){
+  const q=$("p2q").value.trim(),answer=$("p2input").value.trim();if(!answer){$("p2input").focus();return}
+  const lower=answer.toLowerCase(),fixes=[];
+  if(/\bi want talk about\b/.test(lower))fixes.push("“I want talk about” 改为 “I’d like to talk about”。");
+  if(/\bwe know each other since\b/.test(lower))fixes.push("描述从过去持续到现在的关系，可使用 “We have known each other since …”。");
+  if(/\bshe write\b/.test(lower))fixes.push("she 后通常使用 writes。 ");
+  if(/\bshe sing\b/.test(lower))fixes.push("she 后通常使用 sings。 ");
+  if(/\bi have know\b/.test(lower))fixes.push("现在完成时中 have 后使用过去分词：have known。 ");
+  if(/\bgifted in write and sing\b/.test(lower))fixes.push("介词 in 后使用动名词：gifted in writing and singing。 ");
+  if(/\bmy feeling are various\b/.test(lower))fixes.push("“my feeling are various” 可改为 “my feelings are mixed”。");
+  if(/\bit bring me\b/.test(lower))fixes.push("it 后通常使用 brings。 ");
+  const corrected=answer.replace(/\bI want talk about\b/gi,"I’d like to talk about").replace(/\bWe know each other since\b/gi,"We have known each other since").replace(/\bshe write\b/gi,"she writes").replace(/\bshe sing\b/gi,"she sings").replace(/\bI have know\b/gi,"I have known").replace(/\bgifted in write and sing\b/gi,"gifted in writing and singing").replace(/\bmy feeling are various\b/gi,"my feelings are mixed").replace(/\bit bring me\b/gi,"it brings me").replace(/\bvery very very\b/gi,"highly");
+  const missing=[];if(!/primary school|known|met/.test(lower))missing.push("你们如何认识");if(!/song|sing|music/.test(lower))missing.push("她擅长的音乐");if(!/important|encourage|advice|confidence/.test(lower))missing.push("她为什么对你重要");
+  const plan=updateLearningPlan({focus:"p2",reason:missing.length?`补全 Cue Card：${missing.join("、")}`:"练习用同一素材回答不同人物题",grammar:fixes.length>0});
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>你的回答</h4><p>${markErrors(answer)}</p></div>
+    <div class="correction-level"><h4>先改准确性</h4>${fixes.length?`<p>${fixes.map(esc).join("<br>")}</p><p><span class="fix-mark">${esc(corrected)}</span></p>`:"<p>本次没有发现可识别的基础错误。继续留意时态和第三人称单数。</p>"}</div>
+    <div class="correction-level"><h4>让回答更完整</h4><p>${missing.length?`还可以补充：${esc(missing.join("、"))}。`:"四个关键信息已基本覆盖；可再加入一个具体细节，让故事更有画面感。"}</p><p><span class="fix-mark">What I admire most is her creativity. She often encourages me to try new things when I feel nervous or unsure.</span></p></div>
+    <div class="correction-level"><h4>下一步练习</h4><p>本次重点：${esc(plan.reason)}。</p><div class="recommend-box"><b>今日已为你增加 Part 2 素材复述</b><div class="task-reason">用 Rebecca 素材再回答一道相关人物题。</div></div></div>
+    <button class="secondary" onclick="saveHistory('p2','${esc(q).replace(/'/g,"\\'")}','完成一次 P2 批改练习')">保存本次练习</button>`;
+}
+
+function renderP3Intro(){
+  const picks=DATA.p3.ideas.filter(x=>["travel","growth","relax","relationships","culture","thinking"].includes(x.id)).slice(0,6);
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>先选角度</h4><p>没思路时，先看几个可能的方向，不直接给整段答案。</p></div>
+    <div class="p3grid">${picks.map(x=>`<div class="idea-card"><h4>${esc(x.name)}</h4><p class="helper">${esc(x.example)}</p></div>`).join("")}</div>`;
+}
+function ideaScore(i,q){
+  const t=norm(q);let s=0,reasons=[];(i.topics||[]).forEach(k=>{if(t.includes(norm(k))){s+=4;reasons.push(k)}});
+  (i.keywords||[]).forEach(k=>{const kk=toks(k);if(kk.some(x=>t.includes(x))){s+=1}});
+  if(/travel|travelling|young people/.test(t)&&["travel","growth","relax","culture","relationships"].includes(i.id))s+=7;
+  return {s,reasons}
+}
+function suggestIdeas(){
+  const q=$("p3q").value.trim();if(!q)return;
+  const top=DATA.p3.ideas.map(i=>({...i,_m:ideaScore(i,q)})).sort((a,b)=>b._m.s-a._m.s).slice(0,2);
+  selectedIdeas=top.map(i=>i.id);
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>两个回答角度</h4><p>这两个角度会成为后续回答的主线。</p></div>
+    <div class="p3grid">${top.map(i=>`<div class="idea-card" id="idea-${i.id}" onclick="toggleIdea('${i.id}')"><h4>${esc(i.name)}</h4><p class="helper">${esc(i.example)}</p></div>`).join("")}</div>
+    <button class="primary" onclick="buildPRE()">整理成 PRE</button>
+    <div id="preOut"></div>`;
+  selectedIdeas.forEach(x=>{const el=$("idea-"+x);if(el)el.classList.add("selected")});
+}
+function toggleIdea(id){
+  if(selectedIdeas.includes(id))selectedIdeas=selectedIdeas.filter(x=>x!==id);
+  else{if(selectedIdeas.length>=2)selectedIdeas.shift();selectedIdeas.push(id)}
+  document.querySelectorAll(".idea-card[id^='idea-']").forEach(x=>x.classList.remove("selected"));
+  selectedIdeas.forEach(x=>{const el=$("idea-"+x);if(el)el.classList.add("selected")});
+}
+function buildPRE(){
+  const arr=DATA.p3.ideas.filter(i=>selectedIdeas.includes(i.id));if(!arr.length)return;
+  const a=arr[0],b=arr[1];
+  $("preOut").innerHTML=`
+    <div class="pre" style="margin-top:12px">
+      <div class="note"><h4>Point</h4><p>I think music is important for ${b?"two":"one"} main reason${b?"s":""}.</p></div>
+      <div class="note"><h4>Reason 1</h4><p>${esc(a.example)}</p></div>
+      ${b?`<div class="note"><h4>Reason 2</h4><p>${esc(b.example)}</p></div>`:""}
+      <div class="note"><h4>Example</h4><p>For example, after a busy day, people can listen to music on the way home and feel calmer.</p></div>
+    </div>
+    <div class="correction-level" style="margin-top:12px"><h4>参考作答</h4><p><span class="fix-mark">${esc(p3ReferenceAnswer())}</span></p></div>
+    <div class="note"><h4>下一步</h4><p>根据这个结构组织自己的完整回答，再查看批改建议。</p></div>`;
+  $("p3AnswerArea").classList.remove("hidden");
+  $("p3input").focus();
+}
+function p3ReferenceAnswer(){
+  const names=DATA.p3.ideas.filter(i=>selectedIdeas.includes(i.id)).map(i=>i.id);
+  return names.includes("relationships")?"I think music is important for two main reasons. First, it helps people relax and deal with stress. For example, after a busy day, people can listen to music on the way home and feel calmer. In addition, music can bring people together because people with the same interests often have more to talk about.":"I think music is important because it helps people relax and deal with stress. For example, after a busy day, people can listen to music on the way home and feel calmer. It can also help people express their feelings.";
+}
+function fillP3Sample(){
+  const names=DATA.p3.ideas.filter(i=>selectedIdeas.includes(i.id)).map(i=>i.id);
+  $("p3input").value=names.includes("relationships")?"I think music are important for two main reason. First, it help people relax and deal with stress. For example, after a busy day, people can listen music on the way home and feel calmer. In addition, music bring people together because people who enjoys the same interests often have more to talk about.":"I think music are important because it help people relax and deal with stress. For example, after a busy day, people can listen music on the way home and feel calmer. It can also help people express their feelings.";
+}
+function runP3Correction(){
+  const q=$("p3q").value.trim(),answer=$("p3input").value.trim();if(!answer){$("p3input").focus();return}
+  const lower=answer.toLowerCase(),fixes=[];
+  if(/\bmusic are\b/.test(lower))fixes.push("music 是单数概念，通常使用 is。 ");
+  if(/\bmain reason\b/.test(lower))fixes.push("two 后使用复数：two main reasons。 ");
+  if(/\bit help\b/.test(lower))fixes.push("it 后通常使用 helps。 ");
+  if(/\bmusic help\b/.test(lower))fixes.push("单数主语 music 后通常使用 helps。 ");
+  if(/\blisten music\b/.test(lower))fixes.push("listen 后通常使用 to：listen to music。 ");
+  if(/\bmusic bring\b/.test(lower))fixes.push("music 后通常使用 brings。 ");
+  if(/\bpeople who enjoys\b/.test(lower))fixes.push("people 是复数，使用 people who enjoy。 ");
+  if(/\bmusic make\b/.test(lower))fixes.push("单数主语 music 后通常使用 makes。 ");
+  const corrected=answer.replace(/\bMusic are\b/gi,"Music is").replace(/\btwo main reason\b/gi,"two main reasons").replace(/\bit help\b/gi,"it helps").replace(/\bmusic help\b/gi,"Music helps").replace(/\blisten music\b/gi,"listen to music").replace(/\bmusic bring\b/gi,"music brings").replace(/\bpeople who enjoys\b/gi,"people who enjoy").replace(/\bmusic make\b/gi,"music makes");
+  const hasExample=/for example|for instance|such as/.test(lower);
+  const plan=updateLearningPlan({focus:"p3",reason:hasExample?"巩固 Point → Reason → Example 的表达节奏":"每个观点后补一个具体例子",grammar:fixes.length>0});
+  $("practiceOutput").innerHTML=`
+    <div class="note"><h4>你的回答</h4><p>${markErrors(answer)}</p></div>
+    <div class="correction-level"><h4>先改准确性</h4>${fixes.length?`<p>${fixes.map(esc).join("<br>")}</p><p><span class="fix-mark">${esc(corrected)}</span></p>`:"<p>本次没有发现可识别的基础错误。继续留意主谓一致和介词搭配。</p>"}</div>
+    <div class="correction-level"><h4>让观点更有说服力</h4><p>${hasExample?"你已经加入了例子。下一步可以解释这个例子为什么支持你的观点。":"你已经给出观点和原因；再补一个具体例子，答案会更完整。"}</p><p><span class="fix-mark">For example, after a stressful day at work, many people listen to music on the way home and feel calmer.</span></p></div>
+    <div class="correction-level"><h4>下一步练习</h4><p>本次重点：${esc(plan.reason)}。</p><div class="recommend-box"><b>今日已为你增加 Part 3 PRE 练习</b><div class="task-reason">每个观点后至少补一个原因或例子。</div></div></div>
+    <button class="secondary" onclick="saveHistory('p3','${esc(q).replace(/'/g,"\\'")}','完成一次 P3 批改练习')">保存本次练习</button>`;
+}
+
+function showLib(tab){
+  currentLib=tab;
+  ["phrases","stories","ideas","weak"].forEach(x=>$("lib-"+x).classList.toggle("active",x===tab));
+  renderLibrary();
+}
+function favs(){return getLS(KEYS.fav,["relax and unwind","step out of my comfort zone","broaden my horizons"])}
+function toggleFav(p){
+  let a=favs();a=a.includes(p)?a.filter(x=>x!==p):[...a,p];setLS(KEYS.fav,a);renderLibrary();renderRecord();renderSavedPreview();
+}
+function renderLibrary(){
+  if(currentLib==="phrases"){
+    const fav=favs();
+    $("libraryContent").innerHTML=`<div class="cards">${DATA.p1.phrases.map(x=>`
+      <div class="phrase-card"><div class="story-head"><div><h4>${esc(x.phrase)}</h4><div class="details">${esc(x.cn)}</div></div>
+      <button class="favbtn ${fav.includes(x.phrase)?"on":""}" onclick="toggleFav('${esc(x.phrase).replace(/'/g,"\\'")}')">${fav.includes(x.phrase)?"♥":"♡"}</button></div>
+      <div class="tags">${x.tags.map(t=>`<span class="tag">${esc(t)}</span>`).join("")}</div></div>`).join("")}</div>`;
+  }else if(currentLib==="stories"){
+    $("libraryContent").innerHTML=`
+      <div class="panel" style="margin-bottom:14px"><h3>我的核心素材</h3><div class="helper">用同一位朋友的真实素材，覆盖相关人物题，减少重复准备。</div></div>
+      <div class="cards">${DATA.p2.stories.map(s=>`
+        <div class="story-card"><div class="story-head"><h4>${esc(s.name)}</h4><span class="type">${esc(s.category)}</span></div>
+        <div class="chips" style="margin-top:10px">${s.core_facts.map(x=>`<span class="chip">${esc(x)}</span>`).join("")}</div>
+        <div class="details"><b>可覆盖：</b>${esc(s.coverage.join(" / "))}</div>
+        <details class="details"><summary>查看可复用句子</summary>${s.sentences.map(x=>`<div class="sentence">${wrapWords(x)}</div>`).join("")}</details></div>`).join("")}</div>`;
+  }else if(currentLib==="ideas"){
+    $("libraryContent").innerHTML=`<div class="cards">${DATA.p3.ideas.map(i=>`
+      <div class="idea-card"><h4>${esc(i.name)}</h4><p class="helper">${esc(i.example)}</p><div class="tags">${i.keywords.slice(0,3).map(k=>`<span class="tag">${esc(k)}</span>`).join("")}</div></div>`).join("")}</div>`;
+  }else{
+    const weak=getLS(KEYS.weakPoints,[
+      {type:"语法准确性",text:"主谓一致需要继续巩固：people are / she writes。",time:"练习示例"},
+      {type:"回答展开",text:"Part 1 回答可补充一个原因和具体细节。",time:"练习示例"},
+      {type:"观点论证",text:"Part 3 每个观点后补一个原因或例子。",time:"练习示例"}
+    ]);
+    $("libraryContent").innerHTML=`
+      <div class="panel" style="margin-bottom:14px">
+        <h3>个人薄弱点</h3>
+        <div class="helper">来自练习和模拟口试的记录，用于安排后续练习。</div>
+        <div class="cards" style="margin-top:12px">${weak.length?weak.map(w=>`
+          <div class="weakpoint-card"><b>${esc(w.type)}</b><p>${esc(w.text)}</p><div class="details">${esc(w.time||"")}</div></div>`).join(""):`<div class="note"><p>还没有保存薄弱点。</p></div>`}</div>
+      </div>`;
+  }
+}
+function classifyImport(){
+  const lines=$("importQ").value.split(/\n+/).map(x=>x.trim()).filter(Boolean),cats={"人物":[],"经历":[],"地点":[],"物品":[]};
+  lines.forEach(q=>cats[classifyP2(q).cat].push(q));
+  $("importResult").innerHTML=`<div class="cards" style="margin-top:12px">${Object.entries(cats).map(([c,a])=>`<div class="note"><h4>${c} · ${a.length}</h4>${a.length?a.map(x=>`<p>${esc(x)}</p>`).join(""):'<p>暂无</p>'}</div>`).join("")}</div>`;
+}
+function history(){return getLS(KEYS.history,[])}
+function saveHistory(part,q,summary){
+  const a=history();a.unshift({part,q,summary,time:new Date().toLocaleString()});setLS(KEYS.history,a.slice(0,50));renderRecord();
+}
+function renderRecord(){
+  const h=history();
+  $("historyList").innerHTML=h.length?h.map(x=>`<div class="record"><div><b>${x.part.toUpperCase()} · ${esc(x.q)}</b><div class="details">${esc(x.summary)}</div></div><div class="details">${esc(x.time)}</div></div>`).join(""):"还没有练习记录。";
+  const f=favs();$("favList").innerHTML=f.map(x=>`<span class="chip">${esc(x)}</span>`).join("");
+}
+function renderSavedPreview(){
+  $("savedPreview").innerHTML=favs().slice(0,3).map(esc).join("<br/>");
+}
+
+
+
+/* ===== Local-only microphone recorder ===== */
+let mediaRecorder=null;
+let mediaStream=null;
+let recordedChunks=[];
+let currentAudioUrl=null;
+
+async function startLocalRecording(){
+  const status=$("recordStatus");
+  const btn=$("recordBtn");
+  const stop=$("stopRecordBtn");
+  if(!navigator.mediaDevices || !navigator.mediaDevices.getUserMedia || typeof MediaRecorder==="undefined"){
+    status.textContent="当前浏览器不支持录音；可继续用文字回答。";
+    return;
+  }
+  try{
+    mediaStream=await navigator.mediaDevices.getUserMedia({audio:true});
+    recordedChunks=[];
+    mediaRecorder=new MediaRecorder(mediaStream);
+    mediaRecorder.ondataavailable=e=>{if(e.data && e.data.size>0) recordedChunks.push(e.data)};
+    mediaRecorder.onstop=()=>{
+      const blob=new Blob(recordedChunks,{type:mediaRecorder.mimeType||"audio/webm"});
+      if(currentAudioUrl) URL.revokeObjectURL(currentAudioUrl);
+      currentAudioUrl=URL.createObjectURL(blob);
+      $("recordedAudio").src=currentAudioUrl;
+      $("audioBox").style.display="block";
+      status.textContent="录音可在本次页面中回放；没有上传。";
+      if(mediaStream){mediaStream.getTracks().forEach(t=>t.stop());mediaStream=null}
+    };
+    mediaRecorder.start();
+    btn.classList.add("recording");
+    stop.disabled=false;
+    status.textContent="正在录音…";
+  }catch(e){
+    status.textContent="未获得麦克风权限；可继续用文字回答。";
+  }
+}
+function stopLocalRecording(){
+  if(mediaRecorder && mediaRecorder.state!=="inactive"){
+    mediaRecorder.stop();
+    $("recordBtn").classList.remove("recording");
+    $("stopRecordBtn").disabled=true;
+  }
+}
+
+function collectWeakPoints(){
+  const seen=new Set(), arr=[];
+  examState.notes.forEach(n=>{
+    if(["语义边界","观察"].includes(n.type)) return;
+    const key=n.type+"|"+n.text;
+    if(!seen.has(key)){seen.add(key);arr.push({type:n.type,text:n.text})}
+  });
+  return arr;
+}
+function saveWeakPointsToLibrary(){
+  const pts=collectWeakPoints();
+  if(!pts.length){$("linkageStatus").textContent="本次没有可保存的明确薄弱点；不会为了闭环强行生成标签。";return}
+  const old=getLS(KEYS.weakPoints,[]);
+  const time=new Date().toLocaleString();
+  const keys=new Set(old.map(x=>x.type+"|"+x.text));
+  pts.forEach(p=>{const k=p.type+"|"+p.text;if(!keys.has(k)){old.unshift({...p,time});keys.add(k)}});
+  setLS(KEYS.weakPoints,old.slice(0,50));
+  $("linkageStatus").textContent=`已把 ${pts.length} 条练习记录写入「学习库 → 个人薄弱点」。`;
+}
+/* ===== Speaking practice flow ===== */
+const EXAM_FLOW = [
+  {part:"p1", type:"question", text:"Let’s talk about crowded places. Do you like crowded places?"},
+  {part:"p1", type:"question", text:"Do you usually wear headphones in public places?"},
+  {part:"p2", type:"cue", text:"Now I’m going to give you a topic. Describe a friend who is good at music. You should say who this person is, how you know them, what kind of music they are good at, and explain why this person is important to you."},
+  {part:"p3", type:"question", text:"Why do you think music is important in people’s lives?"},
+  {part:"p3", type:"question", text:"Do schools have a responsibility to develop children’s creativity?"}
+];
+const SAMPLE_ANSWERS = {
+  base:[
+    "Not really. I’m quite introverted, so crowded places usually make me feel anxious. I’d rather spend time in a quiet café or stay at home, where I can relax and focus better.",
+    "Yes, quite often. I usually wear headphones on the bus or subway, especially when I’m on my way to school. Listening to music helps me relax and unwind after a busy day.",
+    "I’d like to talk about my best friend, Rebecca. We’ve known each other since primary school, so we have been close friends for many years. She writes her own songs and sings indie folk music. I admire her creativity, and she often encourages me to try new things when I feel nervous or unsure.",
+    "I think music is important because it helps people relax and deal with stress. It is also a way for people to express emotions, and it can bring people together when they share the same interests.",
+    "Yes, I think schools should develop children’s creativity as well as academic knowledge. Subjects such as music, art, and group projects can help students think independently and solve problems in different ways."
+  ],
+  followup:{
+    p1:"Mainly because I don’t like feeling surrounded by too many people. In a quiet place, I can read, study, or just think without being distracted by noise.",
+    p2:"I particularly admire her creativity. She can turn ordinary experiences into songs, and she always has her own ideas instead of copying other people.",
+    p3:"To some extent, yes. Entertainment can help people feel better in the short term, but it cannot solve the real causes of stress. People still need to manage their time or deal with the problem directly."
+  }
+};
+let examState = {index:0, answers:[], notes:[], ended:false, pendingFollowup:null, followupBudget:{p1:1,p2:1,p3:1}, riskRedirectUsed:false};
+
+function addExamMsg(role,text){
+  const box=$("examChat");
+  const div=document.createElement("div");
+  div.className="msg "+role;
+  div.innerHTML=`<div class="avatar">${role==="examiner"?"E":"You"}</div><div class="bubble">${esc(text)}</div>`;
+  box.appendChild(div);
+  box.scrollTop=box.scrollHeight;
+}
+function examCurrentPart(){
+  if(examState.pendingFollowup) return examState.pendingFollowup.part;
+  const step=EXAM_FLOW[Math.min(examState.index,EXAM_FLOW.length-1)];
+  return step?step.part:"feedback";
+}
+function refreshExamStage(){
+  const cur=examState.ended?"feedback":examCurrentPart();
+  ["p1","p2","p3"].forEach(x=>{
+    const el=$("examStage"+x.toUpperCase());
+    el.classList.toggle("active",cur===x);
+    const order={p1:1,p2:2,p3:3,feedback:4};
+    el.classList.toggle("done",order[x]<order[cur]);
+  });
+  $("examStageFeedback").classList.toggle("active",cur==="feedback");
+}
+function makeAdaptiveFollowup(part,answer){
+  const t=norm(answer);
+  const words=(answer.match(/\b[A-Za-z]+(?:'[A-Za-z]+)?\b/g)||[]);
+  const abusive=/\b(stupid|idiot|shut up|fuck|shit|damn)\b/i.test(answer);
+
+  if(abusive) return "Let’s return to the question. Could you answer it briefly?";
+  if(words.length<=4) return "Could you tell me a little more about that?";
+
+  if(part==="p1"){
+    if(/anxious|nervous|introvert|quiet/.test(t)) return "Why do you think you feel more comfortable in quiet places?";
+    if(/music|headphone|song/.test(t)) return "What kind of music do you usually listen to when you are outside?";
+    return "Can you give me one brief reason for that?";
+  }
+  if(part==="p2"){
+    if(/rebecca|friend|primary school/.test(t)) return "What is one thing you particularly admire about this person?";
+    if(/music|sing|song|creative/.test(t)) return "How has this person’s interest in music influenced you?";
+    return "What is one detail about this person that you remember clearly?";
+  }
+  if(part==="p3"){
+    if(/relax|pressure|stress/.test(t)) return "Do you think people rely too much on entertainment to deal with stress?";
+    if(/children|school|education/.test(t)) return "Should schools spend more time on creativity even if it reduces time for academic subjects?";
+    if(/technology|online|social media/.test(t)) return "Has technology changed the way people experience music?";
+    return "What do you think is the main reason for this?";
+  }
+  return "Could you explain that in a little more detail?";
+}
+function decideFollowup(part,answer){
+  const words=(answer.match(/\b[A-Za-z]+(?:'[A-Za-z]+)?\b/g)||[]);
+  const lower=norm(answer);
+  const abusive=/\b(stupid|idiot|shut up|fuck|shit|damn)\b/i.test(answer);
+  if(examState.followupBudget[part] <= 0) return null;
+  if(abusive && !examState.riskRedirectUsed){
+    examState.riskRedirectUsed=true;
+    return "Let’s return to the question. Could you answer it briefly?";
+  }
+  if(words.length<=4) return "Could you tell me a little more about that?";
+  const usefulSignal={
+    p1:/anxious|nervous|introvert|quiet|music|headphone|song/,
+    p2:/rebecca|friend|primary school|music|sing|song|creative/,
+    p3:/relax|pressure|stress|children|school|education|technology|online|social media/
+  }[part];
+  return usefulSignal && usefulSignal.test(lower) ? makeAdaptiveFollowup(part,answer) : null;
+}
+function localObserve(answer,part){
+  const words=(answer.match(/\b[A-Za-z]+(?:'[A-Za-z]+)?\b/g)||[]);
+  const lower=answer.toLowerCase();
+  const notes=[];
+  const abusive=/\b(stupid|idiot|shut up|fuck|shit|damn)\b/i.test(answer);
+
+  if(abusive) notes.push({type:"风险边界",text:"检测到预设攻击性词汇：考官应中性重定向，不争辩，也不把该内容沉淀为用户事实。"});
+  if(words.length<=4) notes.push({type:"极短回答",text:"回答过短：最多只追加一次拓展追问，之后推进下一题，避免无限追问。"});
+  else if(words.length<12) notes.push({type:"展开",text:"回答较短；可补一个原因或具体细节。"});
+  if(part==="p1" && words.length>65) notes.push({type:"答题控制",text:"P1 回答偏长；考官应及时切换下一题。"});
+  if(/\b(um|uh|er|erm)\b/g.test(lower)) notes.push({type:"流利度",text:"出现明显填充词，可观察是否影响连续表达。"});
+  const veryCount=(lower.match(/\bvery\b/g)||[]).length;
+  if(veryCount>=3) notes.push({type:"词汇",text:"“very” 重复较多，可尝试更具体的形容词。"});
+  if(/\bi am agree\b/.test(lower)) notes.push({type:"语法",text:"检测到 “I am agree” 模式；应使用 “I agree”。"});
+  if(/\bpeople is\b/.test(lower)) notes.push({type:"语法",text:"检测到主谓一致问题：people 应搭配 are。"});
+  if(/\b(he|she) have\b/.test(lower)) notes.push({type:"语法",text:"检测到第三人称单数问题：he/she have → has。"});
+  if(/\b(music|school|it) help\b/.test(lower)) notes.push({type:"语法",text:"检测到第三人称单数问题：单数主语后通常使用 helps。"});
+
+  if(words.length>=5 && !abusive) notes.push({type:"观察",text:"已记录本次回答，可在结束后查看反馈。"});
+  if(!notes.length) notes.push({type:"观察",text:"已记录本次回答。"});
+  return notes;
+}
+function renderExamNotes(){
+  const box=$("examNotes");
+  const part=examCurrentPart().toUpperCase();
+  const count=examState.answers.length;
+  box.innerHTML=`
+    <div class="observation"><b>${part} · 已回答 ${count} 题</b>
+      <p>${examState.ended?"本场练习已结束，可查看统一反馈。":"考官正在记录本次表现，详细问题会在结束后统一反馈。"}</p>
+    </div>`;
+}
+function askCurrentExamStep(){
+  if(examState.index>=EXAM_FLOW.length && !examState.pendingFollowup){finishExam();return}
+  const step=examState.pendingFollowup || EXAM_FLOW[examState.index];
+  addExamMsg("examiner",step.text);
+  refreshExamStage();
+}
+function submitExamAnswer(){
+  if(examState.ended)return;
+  const field=$("examAnswer");
+  const answer=field.value.trim();
+  if(!answer)return;
+  const step=examState.pendingFollowup || EXAM_FLOW[examState.index];
+  addExamMsg("user",answer);
+  examState.answers.push({part:step.part,question:step.type==="adaptive"?"adaptive follow-up":step.text,answer});
+  examState.notes.push(...localObserve(answer,step.part).map(n=>({...n,evidence:answer,part:step.part})));
+  field.value="";
+  renderExamNotes();
+  if(step.type==="adaptive"){
+    examState.pendingFollowup=null;
+  }else{
+    examState.index++;
+    const followup=decideFollowup(step.part,answer);
+    if(followup){
+      examState.followupBudget[step.part]--;
+      examState.pendingFollowup={part:step.part,type:"adaptive",text:followup};
+    }
+  }
+  if(examState.index>=EXAM_FLOW.length && !examState.pendingFollowup){finishExam();return}
+  setTimeout(askCurrentExamStep,180);
+}
+function fillReferenceAnswer(){
+  if(examState.pendingFollowup){
+    $("examAnswer").value=SAMPLE_ANSWERS.followup[examState.pendingFollowup.part];
+    return;
+  }
+  $("examAnswer").value=SAMPLE_ANSWERS.base[Math.min(examState.index,SAMPLE_ANSWERS.base.length-1)];
+}
+function finishExam(){
+  if(examState.ended)return;
+  examState.ended=true;
+  addExamMsg("examiner","Thank you. That is the end of the speaking test.");
+  $("examInputArea").classList.add("hidden");
+  $("examFeedback").classList.remove("hidden");
+  renderExamFeedback();
+  refreshExamStage();
+}
+function renderExamFeedback(){
+  const all=examState.answers.map(x=>x.answer).join(" ");
+  const fillers=(all.toLowerCase().match(/\b(um|uh|er|erm)\b/g)||[]).length;
+  const grammarNotes=examState.notes.filter(x=>x.type==="语法");
+  const shortNotes=examState.notes.filter(x=>x.type==="极短回答");
+  const p1Short=examState.answers.filter(x=>x.part==="p1").filter(x=>(x.answer.match(/\b[A-Za-z]+(?:'[A-Za-z]+)?\b/g)||[]).length<12).length;
+  const vocabularyRepeated=/\bvery\b.*\bvery\b.*\bvery\b/i.test(all);
+  const scores={
+    fluency:Math.max(6,7-(p1Short?0.5:0)-(fillers>=3?0.5:0)),
+    lexical:Math.max(6,7-(vocabularyRepeated?0.5:0)),
+    grammar:Math.max(6,7-Math.min(1,grammarNotes.length*.5)),
+    pronunciation:7
+  };
+  const overall=((scores.fluency+scores.lexical+scores.grammar+scores.pronunciation)/4).toFixed(1);
+  const plan=updateLearningPlan({focus:"p1",reason:p1Short?"Part 1 回答展开不足，补充原因和具体细节":grammarNotes.length?"优先提高主谓一致和常用搭配准确性":"保持 Part 1 回答展开练习",grammar:grammarNotes.length>0});
+  $("scoreSummary").innerHTML=`<div class="score-overview"><span class="details">本场参考成绩</span><b>${overall}</b><span class="details">练习参考</span></div>${[["Fluency & Coherence",scores.fluency],["Lexical Resource",scores.lexical],["Grammatical Range & Accuracy",scores.grammar],["Pronunciation",scores.pronunciation]].map(([name,score])=>`<div class="score-item"><b>${name}</b><span>${score.toFixed(1)}</span></div>`).join("")}`;
+  const grammarEvidence=grammarNotes.slice(0,2).map(n=>`证据：“${esc(n.evidence)}”<br>${esc(n.text)}`).join("<br><br>");
+  const feedback=[
+    {title:"Fluency & Coherence",text:shortNotes.length?"继续练习把回答自然展开：每个观点补一个原因或例子，并用连接词让内容顺着往下说。":fillers?`注意减少影响表达连贯的填充词。本场记录到 ${fillers} 个；可在录音回放时重点检查停顿位置。`:"继续保持自然的表达节奏；在 Part 3 中把观点、原因和例子连成完整段落。"},
+    {title:"Lexical Resource",text:vocabularyRepeated?"减少高频词重复。比如把 very good / very happy 换成更具体、搭配自然的表达，并尝试用不同说法复述同一个意思。":"继续积累更具体的词汇和自然搭配；遇到不会的词时，练习用其他说法表达同一个意思。"},
+    {title:"Grammatical Range & Accuracy",html:grammarEvidence || "继续在保证准确的基础上加入不同句型，例如原因从句、让步句或条件句；复杂句不需要多，但要尽量说对。"},
+    {title:"Pronunciation",text:"录音回放时，重点检查单词重音、句子重音和停顿。目标是让听者不需要费力就能理解你的意思。"},
+    {title:"下一步重点",text:plan.reason}
+  ];
+  $("feedbackGrid").innerHTML=feedback.map(x=>`<div class="feedback-item"><h4>${esc(x.title)}</h4><p>${x.html || esc(x.text)}</p></div>`).join("");
+}
+function saveExamToRecord(){
+  saveHistory("mock","Full mock speaking test","完成一次本地人工模拟口试流程验证");
+  const btn=event && event.target; if(btn){btn.textContent="已保存";btn.disabled=true}
+}
+function resetExam(){
+  examState={index:0,answers:[],notes:[],ended:false,pendingFollowup:null,followupBudget:{p1:1,p2:1,p3:1},riskRedirectUsed:false};
+  $("examChat").innerHTML="";
+  $("examNotes").innerHTML='<div class="observation"><b>等待回答</b><p>回答提交后会记录回答长度、重复表达、填充词和常见语法问题。</p></div>';
+  $("examInputArea").classList.remove("hidden");
+  $("examFeedback").classList.add("hidden");
+  $("examAnswer").value="";
+  if(mediaRecorder && mediaRecorder.state!=="inactive"){try{mediaRecorder.stop()}catch(e){}}
+  if(mediaStream){mediaStream.getTracks().forEach(t=>t.stop());mediaStream=null}
+  $("recordBtn").classList.remove("recording");
+  $("stopRecordBtn").disabled=true;
+  $("audioBox").style.display="none";
+  $("recordedAudio").removeAttribute("src");
+  $("recordStatus").textContent="录音仅供本次回放，不会上传或自动转成文字。";
+  askCurrentExamStep();
+}
+
+renderSavedPreview();renderLibrary();renderRecord();renderDailyTasks();switchPart("p2");
+resetExam();
+</script>
+</body>
+</html>
