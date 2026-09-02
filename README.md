@@ -1,4 +1,4 @@
-# English‑study
+# vibe‑coding
 英语学习网页应用。
 
 ## 项目导航
